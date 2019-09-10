@@ -1,0 +1,189 @@
+.contact_top_part{
+    background-image: url(../images/contact_us/contact-us.jpg);
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+	position: relative;
+	filter: brightness(95%);
+    object-fit: fill;
+}
+.contact_top_part span{
+	position: absolute;
+    top: 45%;
+    left: 10%;
+    text-shadow: 2px 0px 3px #000;
+    font-size: 58px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: .5px;
+}
+.contact_middle_part{
+	display: inline-flex;
+}
+.contact_middle_parts {
+	text-align: center;
+	padding-left: 0;
+}
+.section_conatct2{
+	padding: 45px;
+    background-color: #fff;
+}
+.contact_middle_parts img{
+	width: 50px;
+    height: 50px;
+}
+.contact_middle_parts p{
+    margin-bottom: 0;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+.contact_middle_parts h4{
+	margin-top: 8px;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: .8px;
+	color: #007bff;
+}
+.contact_middle_parts h5{
+	text-transform: uppercase;
+    font-size: 17px;
+}
+.contact_middle_parts a{
+	font-size: 15px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #282529;
+}
+.contact_middle_parts a:hover {
+    color: #007bff!important;
+}
+.section_conatct3 {
+	background-color: #edeef0;
+	padding-top: 25px;
+    padding-bottom: 35px;
+}
+.contact_form_part h1{
+	text-align: center;
+    text-transform: uppercase;
+    font-size: 38px;
+}
+.contact_form_part h5{
+	text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 25px;
+}
+.contact_form_part >div{
+	float:left;
+}
+.contact_form .form-control{
+	border: none;
+    outline: none;
+	font-size: 14px;
+	border-bottom: 1px solid #7575750a;
+	min-height: 40px;
+}
+.contact_form input:hover{
+    border-color: currentcolor currentcolor #1853a0;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+    box-shadow: none;
+    outline: 0 none;
+}
+.contact_form textarea:hover{
+    border-color: currentcolor currentcolor #1853a0;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+    box-shadow: none;
+    outline: 0 none;
+}
+.contact_form textarea.form-control {
+    height: 125px;
+}
+.contact_form .btn-primary{
+	background-color: #1853a0;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+}
+.contact_form .btn-primary:hover{
+	transition: all .5s ease-in-out;
+    color: #fff;
+    background-color: #0c2d69;
+}
+*.btn:active, .btn:focus, .btn:active:focus, .btn.active:focus {
+		outline: none !important;
+		box-shadow: none !important;
+}
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+}
+.section_conatct4 .container-fluid{
+	padding-left:0px;
+	padding-right:0px;
+}
+.section_conatct4{
+	padding: 45px 40px;
+    background-color:#f9f9f9;
+	box-shadow: rgba(0, 0, 0, 0.1) 3px 4px 20px 0px inset;
+	display: none;
+}
+.contact_map_part{
+	box-shadow: -1px 1px 7px 5px rgba(0, 0, 0, 0.2);
+    padding: 1px;
+    opacity: .7;
+}
+.contact_map_part:hover{
+	    opacity: 1;
+}
+@media only screen and (max-width:767px) {
+	.contact_middle_part {
+		display: block;
+	}
+	.contact_middle_parts {
+		padding-bottom: 25px;
+	}
+	.section_conatct2 {
+		padding-bottom: 15px;
+	}
+	.contact_form_part h1 {
+		font-size: 28px;
+	}
+	.contact_form_part h5 {
+		font-size: 18px;
+	}
+	.contact_form .btn-primary {
+		font-size: 14px;
+	}
+}
+@media (min-width:475px) and (max-width:767px) {
+	.contact_top_part span {
+		font-size: 44px;
+	}
+}
+@media only screen and (max-width:474px) {
+		.contact_top_part span {
+		font-size: 34px;
+	}
+}

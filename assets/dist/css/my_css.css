@@ -1,0 +1,30 @@
+.panel-info {
+    margin-top: 2%;
+}
+
+#route{
+
+     padding:5px;
+    margin: 0px 21px 0 7px;
+    border: 1px solid #ccc;
+     width:35%
+}
+
+
+
+.panel-heading a {
+	    margin-top: -7px;
+    background: #00a65a;
+    border-color: #00a65a;
+    border-radius: 3px;
+        padding: 6px 14px;
+    color: #fff;
+}
+
+.star{
+	color: red;
+}
+
+
+
+}

@@ -1,0 +1,387 @@
+@media only screen and (min-width:1200px) {
+	.trending_part_above_left {
+	    border-right: 2px solid #1853a0;
+	}
+	.logo{
+	    width:75%;
+	}
+	.section3 .col-md-4{
+        max-width: 31%;
+    }
+}
+@media (min-width:1029px) and (max-width: 1199px) {
+    .footer_right_2 input{
+        width: 160px;
+    }
+    .footer_right_2 button{
+        left: 180px;
+    }
+}
+
+@media (min-width:768px) and (max-width: 1028px) {
+	.footer_top_1 ul {
+		padding-left:0;
+	}
+	.footer_right_2 input {
+		font-size: 12px;
+	}
+	.footer_right_2 button{
+		left: 160px;
+	}
+}
+@media (min-width:992px) and (max-width: 1199px) {
+	.phone {
+    margin-left: 22%;
+	}
+	.over_slider h2 {
+		font-size:28px;
+	}
+	.over_slider_heading::after {
+		width:94%;
+	}
+	.client_feedback_part .client_feedback_parts{
+	    padding: 30px 30px 30px 30px;
+	}
+	.logo{
+	    width:70%;
+	}
+    .footer_middle_1 li a{
+        font-size: 14px;
+    }
+    .section3 .col-md-4.col-sm-12.col-xs-12 {
+        max-width: 30.7%;
+    }
+}
+@media (min-width:768px) and (max-width:991px) {
+	.navbar-nav {
+		padding-left: 3%!important;
+	}
+	.section4 .container {
+		max-width: 100%;
+	}
+	.over_slider h2 {
+		font-size:22px;
+	}
+	.over_slider_heading::after {
+		width:80%;
+	}
+	.trending_part_above {
+		height: 150px;
+	}
+	#demo2 .carousel-indicators {
+		bottom: 145px;
+	}
+	.top_destinations_2019_text {
+		display: flow-root;
+	}
+	.top_destinations_2019_text a {
+		width: 100%;
+		float: left;
+		margin-top: 14px;
+	}
+	.section8 .container{
+		max-width: 100%;
+	}
+	.client_feedback_part .client_feedback_parts{
+        padding: 40px 30px 30px 30px;
+        height: 100%;
+	}
+	.footer_middle_1 a{
+        float: left;
+        font-size: 14px;
+	}
+	.logo{
+	    width:65%;
+	}
+	.navbar-dark .navbar-nav .nav-link {
+	    font-size: 15px;
+	}
+	.section3 .col-md-4.col-sm-12.col-xs-12 {
+	    max-width: 29%;
+	}
+}
+@media only screen and (max-width:991px) {
+	.top_bar .container {
+		max-width: 92%;
+	}
+	.phone {
+		margin-left: 12%;
+	}
+	.phone a {
+		font-size: 14px;
+	}
+	.user_box_link button {
+		font-size: 13px;
+	}
+	#demo .carousel-caption h1 {
+		font-size: 40px;
+	}
+	.explore_all_btn {
+		margin-bottom: 1%;
+	}
+	footer >div {
+        float: none;
+    }
+    .section9 {
+        padding: 14px 0px;
+    }
+}
+		
+@media only screen and (max-width:767px) {	
+	.phone {
+		display:none;
+	}
+	.logo {
+		width: 55%;
+	}
+	.navbar-nav{
+		padding-left: 0%!important;
+		width: max-content;
+		max-height: 250px;
+		overflow: hidden auto;
+	}
+	.client_feedback_part .client_feedback_parts {
+        padding: 40px 30px 30px 30px;
+        height: 100%;
+    }
+	.dropdown-menu {
+		background-color: #ffffffb8!important;
+	}
+	.dropdown-menu a {
+		color: #6e1212;
+	}
+	.dropdown-menu li:hover{
+		/*background-color:#fff;*/
+	}
+	#demo .carousel-caption h1 {
+		font-size: 28px;
+	}
+	.section3 .container {
+		margin-top: 3%;
+	}
+	.search_container input[type=text] {
+		width: 60%;
+		font-size: 14px;
+	}
+	.search_container button {
+		margin-left: -90px;
+		font-size: 14px;
+	}
+	#demo .carousel-indicators {
+		display:none!important;
+	}
+	.over_slider {
+		right: 0!important;
+		left: 22%!important;
+		top: 20%;
+		padding: 15px!important;
+		background: transparent;
+		width: 58%!important;
+	}
+	.tour_short_info {
+		padding: 10px;
+	}
+	.section4 .container{
+		max-width: 90%;
+	}
+	#demo1 .carousel-control-next {
+		right: 0!important;
+	}
+	/*.slider_left_img_part {
+		height: 100%;
+	}*/
+	.Featured_collection .glyphicon {
+		height: 40px;
+		width: 40px;
+		padding-top: 4px;
+	}
+	.Featured_collection .glyphicon-chevron-right:before {
+		font-size: 21px;
+	}
+	.Featured_collection .glyphicon-chevron-left:before {
+		font-size: 21px;
+	}
+	.Featured_collection {
+		padding-right: 0!important;
+		padding-left: 0!important;
+	}
+	.Featured_collection h1 {
+		font-size: 26px;
+	}
+	.carousel-control-prev {
+		left: 14px!important;
+	}
+	.over_slider h2 {
+		padding-top: 0;
+		padding-bottom: 2%;
+		font-weight: 400;
+		text-align: left;
+		font-size: 25px;
+	}
+	.over_slider_heading::after {
+		    margin:2px 0px;
+	}
+	.Featured_collection img {
+		object-fit: cover;
+	}
+	.over_slider_heading::after {
+		width: 234px;
+	}
+	.trending_part_above_left h3 {
+		font-size: 1.1em;
+	}
+	.trending_part_above {
+		height: 170px;
+	}
+	.trending_part_above_right {
+		float: left
+	}
+	.trending_part_tour_duration {
+		float: left;
+	}
+	#demo2 .carousel-indicators {
+		bottom: 170px;
+	}
+	.core_value {
+		font-size: 26px;
+	}
+	.trending_part h1 {
+		font-size: 26px;
+	}
+	.top_destinations_2019 >div {
+		margin-bottom: 15px;
+	}
+	.client_feedback_part .col-lg-4.col-md-4.col-sm-12.col-xs-12 {
+		margin-bottom: 15px;
+	}
+	.experience_heading {
+		font-size: 26px;
+	}
+	.top_destinations_2019 h1{
+		font-size: 26px;
+	}
+	.client_feedback_part h1 {
+		font-size: 26px;
+	}
+	.section3 .col-md-4.col-sm-12.col-xs-12{
+        margin-right: auto;
+	}
+}
+@media only screen and (max-width:580px) {
+	.social {
+		display:none;
+	}
+}
+@media only screen and (max-width:509px) {
+	.logo img {
+		width: 75%;
+		margin-top: 4px;
+	}
+	.logo {
+		width: 68%;
+	}
+	.user_box_link button {
+		font-size: 12px;
+		line-height: 28px;
+		padding-left: 11px;
+		padding-right: 11px;
+	}
+	.user_box_login {
+		margin-top: 11px;
+	}
+	#demo .carousel-caption h1 {
+		font-size: 18px;
+	}
+	.core_value {
+		font-size: 26px;
+	}
+	.trending_part_above_left p {
+		font-size:14px;
+	}
+	.trending_part_above_left h3 {
+		font-size: 1.0em;
+	}
+	.copyright_part p {
+		font-size: 10px;
+	}
+	.over_slider_heading::after {
+		width: auto;
+	}
+	.tour_short_info h6 {
+		font-size: 14px;
+	}
+	.tour_more_details a {
+		font-size: 14px;
+	}
+	.over_slider h2 {
+		font-size: 19px;
+	}
+	.explore_all_btn a {
+		font-size: 14px;
+	}
+}
+@media only screen and (max-width:457px) {
+	.user_box_link button {
+		font-size: 11px;
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+	.user_box_login {
+		margin-top: 7%;
+	}
+	.search_container input[type=text] {
+		width: 75%;
+		font-size: 12px;
+	}
+	.search_container button {
+		margin-left: -82px;
+		font-size: 12px;
+	}
+}
+@media only screen and (max-width:398px) {
+	.logo {
+		width: 60%;
+	}
+	.logo img {
+		width: 100%;
+	}
+	.top_bar .container {
+		max-width: 100%;
+	}
+	#demo .carousel-caption {
+		top: 5%!important;
+	}
+	.trending_part_tour_duration P {
+		font-size:14px;
+	}
+	.trending_part_tour_details a{
+		font-size:14px;
+	}
+	.trending_part_tour_details .fa {
+		font-size: 14px;
+	}
+	.trending_part_above_right {
+		display: inline-grid;
+	}
+	.trending_part_above {
+		height: 240px;
+	}
+	#demo2 .carousel-indicators {
+		bottom: 218px;
+	}
+	.footer_top_1 ul {
+		padding-left: 0;
+	}
+	.footer_right_2 button {
+		left: 180px;
+	}
+}
+@media only screen and (max-width:375px) {
+	.footer_middle_1 a{
+        float: left;
+        font-size: 14px;
+	}
+	.footer_middle_1 li{
+        float: left;
+	}
+}

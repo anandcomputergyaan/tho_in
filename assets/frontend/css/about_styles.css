@@ -1,0 +1,44 @@
+.section_about_img {
+	padding: 0px;
+}
+.section_about_img img{
+	width: 100%;
+    height: 100%;
+}
+.section_about .container-fluid{
+	padding-left: 0;
+    padding-right: 0;
+}
+.section_about_text h1{
+	text-align: center;
+    text-transform: uppercase;
+    font-size: 38px;
+	padding-bottom: 1%;
+}
+.section_about_us{
+	padding: 25px 0px;
+}
+.section_about_text h6{
+	letter-spacing: .6px;
+    line-height: 1.6;
+    text-align: justify;
+}
+.section_about_text h5{
+	font-size: 18px;
+}
+@media only screen and (max-width:767px) {
+	.section_about_text h1{
+		font-size: 30px;
+	}
+}
+@media only screen and (max-width:475px) {
+	.section_about_text h1{
+		font-size: 24px;
+	}
+	.section_about_text h6{
+		font-size: 15px;
+	}
+	.section_about_text h5 {
+		font-size: 17px;
+	}
+}
