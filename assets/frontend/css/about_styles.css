@@ -1,44 +1,104 @@
-.section_about_img {
-	padding: 0px;
+body {
+	margin: 0;
+	/*font-family: 'Lato', Helvetica, sans-serif!important;*/
 }
-.section_about_img img{
+.about_img{
+	padding-left: 0!important;
+    padding-right: 0!important;
+	position: relative;
+}
+.about_img img{
 	width: 100%;
     height: 100%;
 }
-.section_about .container-fluid{
-	padding-left: 0;
-    padding-right: 0;
+.about_img h1{
+	position: absolute;
+    bottom: 20px;
+    color: #fff;
+    text-shadow: 3px 2px 5px #000000;
+    text-transform: uppercase;
+    left: 8%;
+    font-size: 52px;
 }
-.section_about_text h1{
+.about_content_left{
+	float: left;
+}
+.about_content_left img{
+    width: 100%;
+    height: auto;
+}
+.about_content_right{
+	float: right;
+}
+.about_content_right p{
+	text-align: justify;
+    padding: 25px;
+    letter-spacing: .3px;
+    font-size: 15px;
+    background-color: #f2f6f9;
+	border-left: 2px solid #1955a6;
+	padding-bottom: 40px;
+	line-height: 1.6;
+}
+.about_content{
+	padding-left: 0!important;
+    padding-right: 0!important;
+}
+.about_content_right span{
+	float: right;
+    text-transform: uppercase;
+    padding: 8px 0;
+    font-weight: 500;
+}
+.second_one{
+	margin-top: 40px;
+    margin-bottom: 10px;
+}
+.about_content_lower p{
+	border-top: 2px solid #1955a6;
+    padding:12px 20px;
+    text-align: justify;
+    background-color: #f2f6f9;
+    letter-spacing: .4px;
+	line-height: 1.6;
+}
+.about_content_lower{
+	padding-top: 12px;
+}
+.why_heading h2{
 	text-align: center;
     text-transform: uppercase;
-    font-size: 38px;
-	padding-bottom: 1%;
+    font-size: 36px;
+	padding-bottom: 10px;
 }
-.section_about_us{
-	padding: 25px 0px;
+.why-us-main1 , .why-us-main2{
+	float: left;
 }
-.section_about_text h6{
-	letter-spacing: .6px;
+.why-us-main3{
+	float: right;
+}
+.why_main_div p{
+	text-align: justify;
     line-height: 1.6;
-    text-align: justify;
+    letter-spacing: .4px;
 }
-.section_about_text h5{
-	font-size: 18px;
+.why_main_div{
+	padding: 8px;
 }
-@media only screen and (max-width:767px) {
-	.section_about_text h1{
+.why_main_div h4{
+	padding-top: 10px;
+}
+@media (max-width:575px){
+	.about_img h1{
 		font-size: 30px;
 	}
-}
-@media only screen and (max-width:475px) {
-	.section_about_text h1{
-		font-size: 24px;
+	.why_heading h2{
+		font-size: 28px;
 	}
-	.section_about_text h6{
+	.why_main_div h4{
+		font-size: 20px;
+	}
+	.about_content_lower p{
 		font-size: 15px;
-	}
-	.section_about_text h5 {
-		font-size: 17px;
 	}
 }

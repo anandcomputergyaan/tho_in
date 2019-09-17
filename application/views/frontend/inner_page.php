@@ -1,392 +1,355 @@
-		
-</script>
-<script type="text/javascript">
-	
-	$(document).ready(function(){
-
-    $('#Price_form').validate({
-    	rules:{
-    		    c_pack:{
-    		    	required:true
-    		    },
-				c_name:{
-					required:true
-				},
-				c_email:{
-					required:true
-				},
-				 c_phone:{
-					required:true
-				},
-				c_date:{
-					required:true
-				},
-				category:{
-					required:true
-				}
-    	},
-    	message:{
-                 c_pack:{
-					required:"please enter"
-				},
-					c_name:{
-					required:"please enter"
-				},
-				c_email:{
-					required:"please enter"
-				},
-				 c_phone:{
-					required:"please enter"
-				},
-				c_date:{
-					required:"please enter"
-				},
-				category:{
-					required:"please enter"
-				}
-    	},
-
-    	submitHandler:function(form){
-var c_pack =$('#c_pack').val(); 
-var c_name = $('#c_name').val();
-var c_email = $('#c_email').val();
-var c_phone = $('#c_phone').val();
-var datepicker = $('#datepicker').val(); 
-var category =$('#category').val();
-
-    		
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Total Holiday Options</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Total Holiday Options India">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="<?php echo base_url('assets/frontend/images-n/THo_fevicon_icon.png'); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/frontend/css/inner_styles.css'); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/frontend/css/responsive_styles.css'); ?>">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="<?php echo base_url('assets/frontend/js/jquery-1.11.3.min.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('assets/frontend/js/jssor.slider-27.5.0.min.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/frontend/js/gijgo.min.js'); ?>" type="text/javascript"></script>
+    <link href="<?php echo base_url('assets/frontend/css/gijgo.min.css'); ?>" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/frontend/css/main_styles.css'); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/frontend/css/responsive_styles.css'); ?>">
     
-    		 
-    $.post('<?php echo base_url('enquiry/price_request');?>',/*
- REQUEST */  	{ 	c_pack: c_pack,
-    		c_name :c_name,
-			c_email :c_email,
-			c_phone : c_phone,
-			date :datepicker,
-			category : category
-
-    	},
-				function(result){
-
-				alert(result);
-setInterval('refreshPage()',500);
-                
-    });		 
-
-    		
-
-    		
-    	}
-    });
-	});
-function refreshPage(){
-	location.reload();
-}
-
-	
-		</script>
-
-		<script>
-		$( function() {
-		$( "#datepicker" ).datepicker({
-		showOtherMonths: true,
-		selectOtherMonths: true
-		});
-		} );
-			$( function() {
-		$( "#departure_date" ).datepicker({
-		showOtherMonths: true,
-		selectOtherMonths: true
-		});
-		} );
-</script>
-
-		<style>
-		#ui-datepicker-div{
-		position: fixed;
-		top: auto;
-		left: auto;
-		z-index: 99999 !important;
-		display: block;
-		}
-		</style>
-
-
-	<section class="section_inner1">
-	<div class="container-fluid inner_page_first">
-		<div class="row">
-			<div class="col-lg-12 marquee_parts">
-				<div class="inner_page_top_image"><img src="<?php echo base_url('/uploads/package/'.$data['banner_image']);?>"></div>
-					<div class="inner_page_top_header col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<h1><?php echo $data['title'];?></h1>
-						<marquee  behavior="scroll" direction="left"><p><?php echo $data['marquee'];?></p></marquee>
+</head>
+<body>											<!--Jassor Slider starts here-->
+<section class="section_one">
+	<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center">
+			<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
+				<!-- Loading Screen -->
+				<div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+					<img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="images-n/spin.svg" />
+				</div>
+				<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
+					<div>
+						<img data-u="image" src="<?php echo base_url('assets/frontend/images-n/Sigiriya Rock.jpg');?>" />
 					</div>
-					<div class="inner_page_right_header col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<div class="inner_page_discount_top">10% Off</div>
-						<div class="inner_page_discount_bottom">
-							<span class="inner_page_discount_img"><img src="images/label1.png"></span>
-							<span class="inner_page_discount_one">From</span>
-							<span class="inner_page_discount_two">$356</span>
-							<span class="inner_page_discount_three">$314</span><br>
-							<span class="inner_page_discount_four">Per Person on twin sharing basis</span>
-						</div>
-						</div>
+					<div>
+						<img data-u="image" src="<?php echo base_url('assets/frontend/images-n/fishing.jpg');?>" />
 					</div>
+					<div>
+						<img data-u="image" src="<?php echo base_url('assets/frontend/images-n/spices.jpg');?>" />
+					</div>
+					<div>
+						<img data-u="image" src="<?php echo base_url('assets/frontend/images-n/surffing.jpg');?>" />
+					</div>
+					
+				</div>
+				<!-- Bullet Navigator -->
+
+				<!-- Arrow Navigator -->
+				<div data-u="arrowleft" class="jssora051" style="width:40px;height:40px;top:0px;left:0px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+					<svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+						<polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+					</svg>
+				</div>
+				<div data-u="arrowright" class="jssora051" style="width:40px;height:40px;top:0px;right:0px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+					<svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+						<polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+					</svg>
+				</div>
 			</div>
-		</div>
-	</div>
-	<br clear="all">
-</section>
-												<!-- inner page top ends here-->
+    <!-- #endregion Jssor Slider End -->
 
-												<!-- inner page part 2 starts here-->
-<section class="section_inner2">
+        </div>
+    </div>
+	</div>
+</section>
+															<!--Jassor Slider ends here-->
+															
+															<!--Tour description starts here-->
+<section class="section_two">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 inner2_left">
-				<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 inner2_left1">
-					<span><img src="<?php echo base_url("assets/frontend/images/time.png") ?>"><?php echo $data['duration'];?> Days <?php echo --$data['duration'];?> Nights</span>
-					<span><img src="<?php echo base_url("assets/frontend/images/departures.png") ?>"><?php echo $data['tour_route_from'];?></span>
+		  <div class="flex-row nav-bar mb-1 mt-3 d-md-flex display_flex top_head_category">
+				<a href="#tour_short_descriptions" class="btn-anchor">
+                    <div class="nav-item mr-0">Tour Description<span class="ml-1"><i class="fa fa-angle-down"></i></span></div>
+                </a>
+                <a href="#Itnnerary_main" class="btn-anchor">
+                    <div class="nav-item mr-0">Itinerary<span class="ml-1"><i class="fa fa-angle-down"></i></span></div>
+                </a>
+                <a href="#included_main" class="btn-anchor">
+                    <div class="nav-item mr-0">Inclusions <span class="ml-1"><i class="fa fa-angle-down"></i></span></div>
+                </a>
+                <a href="#excluded_main" class="btn-anchor">
+                    <div class="nav-item mr-0">Exclusion<span class="ml-1"><i class="fa fa-angle-down"></i></span></div>
+                </a>
+		 </div>
+			
+			<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 tour_info">
+				<div class="tour_heading">
+					<h1><?php echo $page_details['title'];?></h1>
 				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 inner2_left2">
-					<span><img src="<?php echo base_url("assets/frontend/images/calendar1.png") ?>">Availability: <?php echo date('M y',strtotime($data['availability_from']));?> - <?php echo date('M y',strtotime($data['availability_to']));?> </span>
-					<span><img src="<?php echo base_url("assets/frontend/images/arrivals.png") ?>"><?php echo $data['tour_route_to'];?></span>
+				<div class="tour_short_info_main">
+					<div class="tour_short_info_left col-lg-6 col-md-6 col-sm-6 col-xs-6">
+						<img src="<?php echo base_url('assets/frontend/'); ?>images-n/time1.png">
+						<span><?php echo $page_details['duration'];?> Days <?php echo $page_details['duration']-1;?> nights</span>
+					</div>
+					<div class="tour_short_info_right col-lg-6 col-md-6 col-sm-6 col-xs-6">
+						<img src="<?php echo base_url('assets/frontend/'); ?>images-n/tag1.png">
+						<span>Private Car tour</span>
+					</div>
 				</div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 inner2_right22">
-												<div id="Booking_form" class="tabcontent_left">
-							<a href="#modalPrice" data-toggle="modal">Price On Request</a>
+				<div class="tour_short_description" id="tour_short_descriptions">
+					<span><?php echo $page_details['details'];?></span>
+				</div>
+				<div class="tour_info_short_main">
+					<div class="tour_info_short">
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tour_info_short_left1">
+							<span>Arrival</span>
 						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tour_info_short_right1">
+							<img src="<?php echo base_url('assets/frontend/images-n/arrivals.png'); ?>">
+							<span><?php echo $page_details['tour_route_from'] ;?></span>
+						</div>
+					</div>
+					<div class="tour_info_short">
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tour_info_short_left1">
+							<span>Departure</span>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tour_info_short_right1">
+							<img src="<?php echo base_url('assets/frontend/images-n/departures(2).png');?>">
+							<span><?php echo $page_details['tour_route_to']; ?></span>
+						</div>
+					</div>
+					<div class="tour_info_short">
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tour_info_short_left1">
+							<span>Best time to travel</span>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tour_info_short_right1">
+							<img src="<?php echo base_url('assets/frontend/images-n/time.png'); ?>">
+							<span>23 December - 20 June</span>
+						</div>
+					</div>
+					<div class="tour_info_short tour_info_short_last">
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tour_info_short_left1">
+							<span>Facilities</span>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tour_info_short_right1 tour_info_short_right_last">
+							<img src="<?php echo base_url('assets/frontend/images-n/wifi-connection-signal-symbol(2).png'); ?>">
+							<img src="<?php echo base_url('assets/frontend/images-n/binoculars.png'); ?>">
+							<img src="<?php echo base_url('assets/frontend/images-n/breakfast.png'); ?>">
+							<img src="<?php echo base_url('assets/frontend/images-n/car.png'); ?>">
+							<img src="<?php echo base_url('assets/frontend/images-n/guide(2).png'); ?>">
+						</div>
+					</div>
+				</div>
+				<div class="itinerary_head" id="Itnnerary_main">
+					<h3>itinerary</h3>
+				</div>
+				
+				<div id="Itnnerary_Menu">
+					<div class="list-group panel">
 
-                           <div class="modal fade" id="modalPrice">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									
-									<div class="modal-header">
-										<h4 class="modal-title">Request For Price</h4>
-										<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<?php foreach ($itinerary_details as $itinerary_details_value) { ?>			
+
+						<a href="#itinerary<?php echo $itinerary_details_value['day_no']; ?>" class="list-group-item list-group-item-success itenerary_tab collapsed" data-toggle="collapse" data-parent="#Itnnerary_Menu" aria-expanded="false">
+							<div class="pull-left"><h5>Day<span><?php echo $itinerary_details_value['day_no']; ?></span></h5></div>
+							<div class="t-heading">
+								<h4 class="font-lg">Kathmandu To Pokhara</h4>
+								<p>Behind sooner dining so window excuse he summer.</p>
+							</div>
+							<i class="fa fa-angle-down"></i>
+						</a>
+
+						<div class="collapse collapse_redesign" id="itinerary<?php echo $itinerary_details_value['day_no']; ?>" aria-expanded="false" style="height: 0px;">
+							<p><?php echo $itinerary_details_value['description']; ?> </p>	
+
+						</div>
+<?php }?>
+
+
+
+					</div>
+				</div>
+				<div class="included_head" id="included_main">
+						<?php if(!empty($page_details['inclusions'])){?>
+					<h3>What's Inclusions</h3>		
+					<?php } ?>
+				</div> 
+				<?php echo $page_details['inclusions'];?>
+
+
+				<div class="excluded_head" id="excluded_main">
+					<?php if(!empty($page_details['exclusion'])){?>
+					<h3>What's Excluded</h3>		
+					<?php } ?>
+				
+				</div>
+                      <?php echo $page_details['exclusion'] ?>   
+
+
+			</div>
+			<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 tour_short_info">
+					<div class="inner_page_right_header">
+							<div class="inner_page_discount_top"><?php echo $page_details['offer'] ?></div>
+							<div class="inner_page_discount_bottom">
+								<span class="inner_page_discount_img"><img src="<?php echo base_url('assets/frontend/images-n/label1.png'); ?>"></span>
+								<span class="inner_page_discount_one">From</span>
+								<span class="inner_page_discount_two">$<?php echo $page_details['price']?></span>
+								<span class="inner_page_discount_three">$<?php echo $page_details['price']-$page_details['discounted_price']?></span><br>
+							<span class="inner_page_discount_four">Per Person on twin sharing basis</span>
+						</div>
+					</div>
+					<div class="map_main">
+						<img src="<?php echo base_url('assets/frontend/images-n/map.jpg');?>">
+					</div>
+					<div class="inner_page_enq_form">
+						<div class="interested_in_form">
+							<div class="container">
+								  <form role="form" name="quotes_form" id="quotes_form" action="#" method="post">
+								  	<input type="hidden" id="package_id1" name="package_id" value="Hot Air Balloon Ride">  
+									<h4>Enquire About This Trip</h4>
+									<div class="row">
+									  <div class="col-75">
+										<input type="text" id="name" name="name" placeholder="Name*" required="" autocomplete="off">
+									  </div>
 									</div>
-									
-						<div class="modal-body">
-							<form role="form" name="Price_form" id="Price_form">
-
-								<div id="message"></div>
-								<div class="row">
-									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 to_give_padding">
-										<input type="text" id="c_pack" name="c_pack"  value="<?php echo $data['title'];?>" readonly >
-
-										<input type="text" id="c_name" name="c_name" placeholder="Full Name*" autocomplete="off" pattern="[a-zA-Z0-9\s]+" title="Text Only" required>
-										<input type="email" id="c_email" name="c_email" placeholder="Email*" autocomplete="off" required>
-										<input type="text" id="c_phone" name="c_phone" placeholder="Contact Number*" autocomplete="off" pattern="[0-9]+" title="Number Only" required>
-										<input type="text" id="datepicker" name="c_date" required="" placeholder="Departure Date*" autocomplete="off" required>
-										<select id="category" name="category" class="hotel_categ" required>
-											<option value="">Select Hotel Category</option>
-											<option value="5* Luxury">5* Luxury</option>
+									<div class="row">
+									  <div class="col-75">
+										<input type="text" id="email" name="email" required="" placeholder="Email*" autocomplete="off">
+									  </div>
+									</div>
+									<div class="row">
+									  <div class="col-75">
+										<input type="text" id="phone" name="phone" required="" placeholder="Contact Number*" autocomplete="off">
+									  </div>
+									</div>
+									<div class="row">
+									  <div class="col-75">
+										<input type="text" id="datepicker" name="date" required="" placeholder="Departure Date*" autocomplete="off" class="hasDatepicker">
+									  </div>
+									</div>
+									<div class="row">
+									  <div class="col-75">
+										 <select name="Category">
+											<option value="Select Category">Select Category*</option>
+											<option value="5* Luxury">5* Luxury</option>						
 											<option value="4* Deluxe">4* Deluxe</option>
 											<option value="3* Comfort">3* Comfort</option>
 										</select>
-
-									<input type="submit" name="submit" id="submit_price">
-										
+									  </div>
 									</div>
-										</form>
+									<div class="row">
+									<div class="col-75">
+									  <input type="submit" name="submit" id="submit1" value="Submit">
 									</div>
 									</div>
-								</div>
-							</div>
-						</div>
-
-
-			</div>
-		</div>
-	</div>
-</section>
-												<!-- inner page part 2 ends here-->
-																								
-												<!-- inner page part 3 starts here-->
-<section class="section_inner3">
-	<div class="itinery_portion">
-		<div class="container">
-			<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 itinery_left">
-
-					 <!-- Nav tabs -->
-					  <ul class="nav nav-tabs">
-						<li class="nav-item">
-						  <a class="nav-link active" data-toggle="tab" href="#menu_details">Details</a>
-						</li>
-						<li class="nav-item">
-						  <a class="nav-link" data-toggle="tab" href="#menu_ininerary">Itinerary</a>
-						</li>
-						<li class="nav-item">
-						  <a class="nav-link" data-toggle="tab" href="#menu_inclusion">Inclusions</a>
-						</li>
-						<?php if(!empty($data['exclusion'])){ ?>
-						<li class="nav-item">
-						  <a class="nav-link" data-toggle="tab" href="#menu_exclusion">Exclusion</a>
-						</li>
-					<?php } if(!empty($data['essential_information'])){ ?>
-						<li class="nav-item">
-						  <a class="nav-link" data-toggle="tab" href="#menu_essential_info">Essential Informations</a>
-						</li>
-				 <?php }?>	
-					  </ul>
-
-				  <!-- Tab panes -->
-				  <div class="tab-content">
-					<div id="menu_details" class="container tab-pane active"><br>
-					  <div class="same_line">
-						<img src="<?php echo base_url("assets/frontend/images/description.png"); ?>">
-						<h4>Tour Overview</h4>
-					  </div>
-					  <p><?php echo $data['details'];?></p>
-					</div>
-					<div id="menu_ininerary" class="container tab-pane fade"><br>
-						<div class="same_line">
-						   <img src="<?php echo base_url("assets/frontend/images/destinations.png"); ?>">
-					       <h4>Itinerary Details</h4>
-					   </div>
-					  <p><?php echo $data['itinerary'];?></p>
-
- <?php 
-foreach ( $itineraries as $days) { ?>
-
-
-						<button class="accordion">Day <?php echo $days['day_no'];?></button>
-							<div class="panel">
-							  <?php echo $days['description'];?>
-							</div>
-
-
-
- <?php } ?>
-
-
-						
-
-
-
-
-
-						
-					</div>
-					<div id="menu_inclusion" class="container tab-pane fade"><br>
-					  <h4>Inclusions Details</h4>
-					  <?php echo $data['inclusions'];?>
-					  
-					</div>
-					<div id="menu_exclusion" class="container tab-pane fade"><br>
-					  <h4>Exclusion Details</h4>
-					 <?php echo $data['exclusion'];?>
-					  
-					</div>
-					<div id="menu_essential_info" class="container tab-pane fade"><br>
-					  <h4>Essential Information Details</h4>
-					  <?php echo $data['essential_information'];?>
-					  
-					</div>
-				  </div>
-				  
-			</div>
-						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 tour_highlight_main">
-							<div class="container">
-								  <div class="tour_highlight">
-									<h4>Why Book With Us?</h4>
-									<span><img src="<?php echo base_url("assets/frontend/images/money-bag.png"); ?>"><p>Best Price Guarantee.</p></span>
-									<span><img src="<?php echo base_url("assets/frontend/images/support.png"); ?>"><p>24/7 Customer Support.</p></span>
-									<span><img src="<?php echo base_url("assets/frontend/images/star.png"); ?>"><p>Hand-picked Tours & Activities.</p></span>
-									<span><img src="<?php echo base_url("assets/frontend/images/travel-insurance.png"); ?>"><p>Hassle Free Booking.</p></span>
-								</div>
+								  </form>
 						  </div>
-					  </div>
+						</div>
+					</div>
+					<div class="promo_img">
+						<a href="#"><img src="<?php echo base_url('assets/frontend/images-n/sikkim-800-800-ITM.jpg');?>"></a>
+					</div>
+			</div>
 		</div>
 	</div>
-	<br clear="all">
 </section>
-											<!-- inner page part 3 ends here-->
-											
-											<!-- inner page part 4 related tours ends here-->
-											<!-- inner page part 3 ends here-->
-											
-											
-											<!-- inner page part 4 related tours starts here-->											
-<section class="section_inner4">
+															<!--Tour description ends here-->
+
+															<!--Related tours starts here-->
+<section class="section_three">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 related_tours_heading">
-				<h1>Related Tours</h1>
+				<h2 class="related_tours_head">Related Tours</h2>
 			</div>
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 related_tours">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 related_tours_main">
+<?php foreach ($relatives_Packs as $relatives_Packs_value) {?>
 
-<?php foreach ($relative_pack as $key) { ?>
 
-	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 related_tour_left_parts">
+
+				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 related_tours_first">
 					<div class="related_tour_part">
-						<img src="<?php echo base_url().'uploads/package/'.$key['map_image']; ?>">
-						<div class="top_ribon">
-							<span><?php echo $key['offer']; ?> Off</span>
-						</div>
+						<img src="<?php echo base_url('uploads/package/'.$relatives_Packs_value['map_image'])?>">
+						<div class="tour__tag" data-tag="Private Car Tour"></div>
 						<div class="related_tour_text">
-							<h5><?php echo $key['title']; ?></h5>
-							<h6><?php echo $key['duration']; ?>D/<?php echo --$key['duration']; ?>N</h6>
+							<h5><?php echo $relatives_Packs_value['title']; ?></h5>
+							<div class="for_star">
+								<h6><?php echo $relatives_Packs_value['duration']; ?>D/<?php echo $relatives_Packs_value['duration']-1; ?>N</h6>
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+							</div>
 							<div class="related_tour_text_right">
-								<a href="<?php echo base_url($key['cat_alias']."/".$key['alias']);?>">View Details</a>
+								<a href="#">Read more</a>
 							</div>
 						</div>
-					</div>					
+					</div>
 				</div>
-	
-<?php } ?>
-				
 
+<?php } ?>
 
 			</div>
 		</div>
 	</div>
 </section>
+															<!--Related tours ends here-->
 
-
-
-
-		
-
-</script>
-<!--for booking and enquiry button-->
-<!-- <script>
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script> -->
-<!-- Itinerary Accordion script-->
+															
+<!--script for datepicker-->															
 <script>
-var acc = document.getElementsByClassName("accordion");
-var i;
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4'
+        });
+</script>															
+<!--script for jassor slider-->
+<script type="text/javascript">
+	jQuery(document).ready(function ($) {
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight){
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
-  });
-}
-</script>										
-											<!-- inner page part 4 related tours ends here-->
-											
-<?php $this->load->view('frontend/theme/footer.php');  ?>
+		var jssor_1_options = {
+		  $AutoPlay: 1,
+		  $SlideWidth: 720,
+		  $ArrowNavigatorOptions: {
+			$Class: $JssorArrowNavigator$
+		  },
+		  $BulletNavigatorOptions: {
+			$Class: $JssorBulletNavigator$
+		  }
+		};
+
+		var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+		/*#region responsive code begin*/
+
+		var MAX_WIDTH = 1366;
+
+		function ScaleSlider() {
+			var containerElement = jssor_1_slider.$Elmt.parentNode;
+			var containerWidth = containerElement.clientWidth;
+
+			if (containerWidth) {
+
+				var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+				jssor_1_slider.$ScaleWidth(expectedWidth);
+			}
+			else {
+				window.setTimeout(ScaleSlider, 30);
+			}
+		}
+
+		ScaleSlider();
+
+		$(window).bind("load", ScaleSlider);
+		$(window).bind("resize", ScaleSlider);
+		$(window).bind("orientationchange", ScaleSlider);
+		/*#endregion responsive code end*/
+	});
+</script>
+ <?php $this->load->view('frontend/theme/footer.php');?>

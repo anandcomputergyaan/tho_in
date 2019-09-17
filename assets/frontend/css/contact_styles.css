@@ -1,122 +1,77 @@
-.contact_top_part{
-    background-image: url(../images/contact_us/contact-us.jpg);
+body {
+	margin: 0;
+	font-family: 'Lato', Helvetica, sans-serif!important;
+}
+.search_head{
+	padding: 0!important;
+	background-image: url(../images/contact-us.jpg);
     background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
     height: 400px;
-	position: relative;
-	filter: brightness(95%);
+    position: relative;
+    filter: brightness(95%);
     object-fit: fill;
 }
-.contact_top_part span{
+.search_head h1{
 	position: absolute;
-    top: 45%;
-    left: 10%;
-    text-shadow: 2px 0px 3px #000;
+    top: 50%;
     font-size: 58px;
     text-transform: uppercase;
+    left: 20px;
+    padding: 0px 48px;
+	text-shadow: 2px 0px 3px #000;
+    font-size: 58px;
     color: #fff;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: .5px;
 }
-.contact_middle_part{
-	display: inline-flex;
+.contkt_main{
+	padding-top: 40px;
+    padding-bottom: 20px;
 }
-.contact_middle_parts {
-	text-align: center;
-	padding-left: 0;
+.contakt_form .form-group{
+    margin-bottom: 20px;
 }
-.section_conatct2{
-	padding: 45px;
-    background-color: #fff;
-}
-.contact_middle_parts img{
-	width: 50px;
-    height: 50px;
-}
-.contact_middle_parts p{
-    margin-bottom: 0;
-    font-size: 15px;
-    text-align: center;
-    letter-spacing: 1px;
-    font-weight: 500;
-}
-.contact_middle_parts h4{
-	margin-top: 8px;
-    text-transform: uppercase;
-    font-size: 20px;
-    letter-spacing: .8px;
-	color: #007bff;
-}
-.contact_middle_parts h5{
-	text-transform: uppercase;
-    font-size: 17px;
-}
-.contact_middle_parts a{
-	font-size: 15px;
-    text-align: center;
-    letter-spacing: 1px;
-    font-weight: 500;
-    color: #282529;
-}
-.contact_middle_parts a:hover {
-    color: #007bff!important;
-}
-.section_conatct3 {
-	background-color: #edeef0;
-	padding-top: 25px;
-    padding-bottom: 35px;
-}
-.contact_form_part h1{
-	text-align: center;
-    text-transform: uppercase;
-    font-size: 38px;
-}
-.contact_form_part h5{
-	text-align: center;
-    text-transform: uppercase;
-    padding-bottom: 25px;
-}
-.contact_form_part >div{
-	float:left;
-}
-.contact_form .form-control{
+.contakt_form .form-control{
 	border: none;
     outline: none;
 	font-size: 14px;
-	border-bottom: 1px solid #7575750a;
+	border: 1px solid #75757570;
 	min-height: 40px;
 }
-.contact_form input:hover{
+.contakt_form input:hover{
     border-color: currentcolor currentcolor #1853a0;
     border-style: none none solid;
     border-width: 0 0 1px;
     box-shadow: none;
     outline: 0 none;
 }
-.contact_form textarea:hover{
+.contakt_form textarea:hover{
     border-color: currentcolor currentcolor #1853a0;
     border-style: none none solid;
     border-width: 0 0 1px;
     box-shadow: none;
     outline: 0 none;
 }
-.contact_form textarea.form-control {
-    height: 125px;
+.contakt_form textarea.form-control {
+    height: 215px;
 }
-.contact_form .btn-primary{
+.contakt_form .btn-primary{
 	background-color: #1853a0;
     color: #fff;
     text-align: center;
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: .4px;
     border: none;
     outline: none;
     padding: 8px 20px;
+	margin-bottom: 20px;
+	line-height: 1.6;
 }
-.contact_form .btn-primary:hover{
+.contakt_form .btn-primary:hover{
 	transition: all .5s ease-in-out;
     color: #fff;
     background-color: #0c2d69;
@@ -139,51 +94,31 @@ input[type=number]:focus,
 [contenteditable].form-control:focus {
   box-shadow: inset 0 -1px 0 #ddd;
 }
-.section_conatct4 .container-fluid{
-	padding-left:0px;
-	padding-right:0px;
+
+.contakt_right > div{
+	text-align: center;
+	background-color: #f8f8f8;
+	padding: 16px 0 10px 0;
+	border-bottom: 1px solid #f1f1f1;
 }
-.section_conatct4{
-	padding: 45px 40px;
-    background-color:#f9f9f9;
-	box-shadow: rgba(0, 0, 0, 0.1) 3px 4px 20px 0px inset;
-	display: none;
+.contakt_right img{
+	width: 42px;
 }
-.contact_map_part{
-	box-shadow: -1px 1px 7px 5px rgba(0, 0, 0, 0.2);
-    padding: 1px;
-    opacity: .7;
+.contakt_right h5{
+	font-size: 18px;
+	padding: 12px 0 4px 0;
+	margin-bottom: 0;
+	text-transform: uppercase;
 }
-.contact_map_part:hover{
-	    opacity: 1;
+.contakt_right a:hover{
+	text-decoration: none;
 }
-@media only screen and (max-width:767px) {
-	.contact_middle_part {
-		display: block;
-	}
-	.contact_middle_parts {
-		padding-bottom: 25px;
-	}
-	.section_conatct2 {
-		padding-bottom: 15px;
-	}
-	.contact_form_part h1 {
-		font-size: 28px;
-	}
-	.contact_form_part h5 {
-		font-size: 18px;
-	}
-	.contact_form .btn-primary {
-		font-size: 14px;
-	}
+.contakt_right a{
+	letter-spacing: 0.4px;
+	font-size: 15px;
 }
-@media (min-width:475px) and (max-width:767px) {
-	.contact_top_part span {
-		font-size: 44px;
-	}
-}
-@media only screen and (max-width:474px) {
-		.contact_top_part span {
-		font-size: 34px;
-	}
+.contakt_right_three p{
+	font-size: 14px;
+    letter-spacing: .4px;
+	margin-bottom: 0px;
 }

@@ -29,8 +29,14 @@
             <form action="../updated" method="post"  id="form_id" enctype="multipart/form-data" >
               <table class="table responsive form-group">
                 <tr>
-                  <td><b> Country <span class="star">*</span> :</b></td><td><input type="text" name="country" class="form-control"value="<?php echo $data['country'];?>" required > </td>
+                  <td><b> Country <span class="star">*</span> :</b></td><td><input type="text" name="country" class="form-control"value="<?php echo $data['country'];?>" required onkeyup ="alia(this.value)"> </td>
                 </tr>
+
+
+                  <tr>
+                  <td><b> alias <span class="star">*</span> :</b></td><td><input type="text" name="alias" id="aliasname" class="form-control" value="<?php echo $data['alias'];?>" required   > </td>
+                </tr>
+
 
            <tr>
               <td><b>Description<span class="star">*</span>:</b></td><td><textarea  name="description" class="form-control ckeditor"  required  > <?php echo $data['description'];?></textarea>  </td>
@@ -65,6 +71,16 @@
 </section>
 <!-- /.content -->
 </div>
+
+<!-- ./wrapper -->
+<script type="text/javascript">
+  function alia(str) {
+         str = str.toLowerCase();
+         str=str.split(" ");
+        str =str.join("-");
+      document.getElementById("aliasname").value = str;
+  }
+</script>
 <!-- /.content-wrapper -->
 <?php $this->load->view('admin/theme/footer');?>
 <!-- Add the sidebar's background. This div must be placed

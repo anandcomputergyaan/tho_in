@@ -29,6 +29,8 @@
               <tr>
                 <th>Sr.No.</th>
                 <th>Country</th>
+                <th>Alisa</th>
+
                 <th>Description</th>
                 <th>Tour Count</th>
 
@@ -42,6 +44,7 @@
               foreach($data as $row) { $id = $row['id']; ?> <tr>
                 <td><?php echo $i; ?></td>
                 <td><?php echo $row['country']; ?></td>
+                <td><?php echo $row['alias']; ?></td>
  
 <td><?php echo $row['description']; ?></td>
 <td><?php echo $row['tour_count']; ?></td>

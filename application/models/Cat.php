@@ -55,32 +55,47 @@ class Cat extends CI_Model{
 
 
 
-   public function all_parent(){   
+   public function all_parent()
+   {   
 
       $this->db->select('id,name,alias')->where('parent',"");
       $info =$this->db->get('category');
       return $info->result_array();
 
    }
-         public function parent_id($cat){   
-      $this->db->select('id')->where('alias',$cat);
-      $info =$this->db->get('category');
-      return $info->result_array();
-
+   
+   public function parent_id($cat)
+   {   
+     $info = $this->db->select('id')
+                       ->where('alias',$cat)
+                       ->get('category')
+                       ->result_array();
+      return $info[0];
    }
 
-      public function all_categories(){   
+   public function all_categories()
+   {   
       $this->db->select('id,name,alias')->where_not_in('parent',"");
       $all_c =$this->db->get('category');
       return $all_c->result_array();
-
-   }
-      public function all_country(){
-      $country_list=$this->db->select('id,country')->get('tour_destination');
-        $country_list=$country_list->result_array();
-        return($country_list);
    }
 
+
+   public function all_country()
+   {
+     $country_list=$this->db->select('id,country,alias')->get('tour_destination');
+     $country_list=$country_list->result_array();
+     return($country_list);
+   }
+
+   public function county_id($alias){
+     $country_id=$this->db->select('id')
+               ->where('alias',$alias)
+               ->get('tour_destination')
+               ->result_array();
+               return $country_id[0];
+
+   }
 
 
 

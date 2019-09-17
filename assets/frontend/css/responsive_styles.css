@@ -1,0 +1,229 @@
+@media (min-width:992px) and (max-width:1007px){
+	.md-form.my-0{
+		max-width: 203px;
+	}
+}
+@media (min-width:992px) and (max-width:1099px){
+    .footer_left_two a{
+        font-size: 13.6px;
+    }
+}
+@media (min-width:1091px) and (max-width:1107px){
+	.navbar-dark .navbar-nav .nav-link{
+		padding: 8px 14px!important;
+	}
+}
+@media (min-width:992px) and (max-width:1107px){
+    .footer_left_one, .footer_left_two, .footer_left_three, .footer_left_four ul{
+        padding-left: 0!important;
+    }
+}
+@media (min-width:992px) and (max-width: 1199px){
+	.special_offer_single_part h3{
+		font-size: 1.4rem;
+		bottom: -33px;
+	}
+	.normal_text{
+        width: 264px;
+	}
+	.overlay_top{
+	    width: 264px; 
+	}
+	.overlay_text h6 {
+        font-size: 13px;
+	}
+	.hot_deals_detail_main:hover .overlay_top {
+        height: 50%;
+    }
+    .overlay_text a{
+        padding: 4px 42px;
+        font-size: 15px;
+    }
+    .overlay_text h6 {
+        margin-bottom: 10px;
+    }
+}
+@media (min-width:768px) and (max-width: 991px){
+	.special_offer_single_part h3{
+		font-size: 2.8rem;
+	    bottom: 0px;
+	}
+	.special_offer_single_part span {
+		font-size: 1.75rem;
+	}
+	.client_img_part h4{
+		font-size: 1rem;
+	}
+	.client_img_part h5{
+		font-size: .92rem;
+	}
+}
+	
+@media only screen and (max-width: 991px){
+	.navbar {
+		background-color: #e8e7e7!important;
+	}
+	.our_services_main{
+		display: inline-block;
+	}
+	.our_services_div img{
+		left: 47%;
+	}
+	.our_services_div {
+		margin-bottom: 50px;
+	}
+	.section_2{
+		margin-top: 0%;
+	}
+	.popular_tour_text {
+		float: left;
+		padding-top: 20px;
+		padding-bottom: 10px;
+	}
+	.popular_tour_img img:hover {
+		-ms-transform: scale(1.05);
+		-webkit-transform: scale(1.05);
+		transform: scale(1.05);
+	}
+	.prev, .next{
+		top: 30%!important;
+		padding: 10px!important;
+		font-size: 22px!important;
+	}
+	#caption{
+		font-size: 18px;
+		padding-top: 0px;
+		margin-bottom: 0;
+	}
+	.special_offer_main {
+		display: block;
+	}
+	.client_text_part p{
+		font-size: 15px;
+	}
+	.client_img_part img{
+		margin-top: 50%;
+	}
+	.popular_tour_details{
+		height: 104%;
+	}
+	.hot_deals_main {
+        display: block;
+    }
+    .hotdeals_image {
+         width: 100%;
+    }
+    .hot_deals_detail_main {
+        margin-bottom: 35px;
+    }
+    .normal_text {
+        width: 100%;
+    }
+    .overlay_top {
+        width:100%;
+    }
+    .to_search{
+        background-color: #ffffff!important;
+    }
+    .section_9 {
+        padding: 22px 0 12px 0;
+    }
+}
+@media only screen and (max-width: 767px){
+	.Most_popular_tour_main {
+		display: contents;
+	}
+	.popular_tour_details{
+		height: 102%;
+	}
+	.popular_tour_details_main{
+		margin-bottom: 35px;
+	}
+	.special_offer_single{
+		margin: 12px auto;
+	}
+	.client_left_part , .client_right_part{
+		display: contents;
+		float: none;
+	}
+	.client_img_part img {
+		margin-top: 5%;
+		margin-bottom: 5%;
+	}
+	.top_footer_main ul{
+		padding-left: 0;
+	}
+	.view a{
+	    font-size: 14px;
+	}
+}
+@media (min-width:992px) and (max-width: 1144px){
+	.navbar-dark .navbar-nav .nav-link {
+		font-size: 14px;
+	}
+}
+@media (min-width:992px) and (max-width: 1090px){
+		.navbar-dark .navbar-nav .nav-link {
+			padding: 8px 6px!important;
+		}
+}
+@media only screen and (max-width: 575px){
+	.our_services_div img {
+		left: 42%;
+	}
+	.Famous_trip_head h2 {
+		font-size: 24px;
+	}
+	.Famous_trip_head hr {
+		width: 333px;
+	}
+	.our_services_head h2 {
+		font-size: 24px;
+	}
+	.our_services_head hr {
+		width: 185px;
+		max-width: 100%;
+	}
+	h2{
+		font-size: 1.6rem!important;
+	}
+	.Most_popular_tour_head hr {
+		width: 311px;
+		max-width: 100%;
+	}
+	.tour_by_destination_head hr {
+		width: 329px;
+		max-width: 100%;
+	}
+	.special_offer_head hr {
+		width: 279px;
+		max-width: 100%;
+	}
+	.client_head hr {
+		width: 429px;
+		max-width: 100%;
+	}
+	
+}
+@media only screen and (max-width: 399px){
+	.Famous_trip_head h2 {
+		font-size: 20px;
+	}
+	.Famous_trip_head hr {
+		width: 260px;
+	}
+}
+@media only screen and (max-width: 475px){
+	.copyright_main p{
+		font-size: 12px;
+	}
+}
+@media only screen and (max-width: 351px){
+	.navbar-brand{
+		margin-right:0;
+		width: 75%;
+	}
+	.navbar-brand img{
+		width: 75%;
+	}
+}	

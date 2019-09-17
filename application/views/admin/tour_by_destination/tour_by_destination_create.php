@@ -26,10 +26,14 @@
           <div class="col-md-2"> </div>
           <div class="col-md-8">
             <br>
-            <form action="store" method="post"  id="form_id" enctype="multipart/form-data" >
+            <form action="tour_by_destinations/store" method="post"  id="form_id" enctype="multipart/form-data" >
               <table class="table responsive form-group">
                 <tr>
-                  <td><b> Country <span class="star">*</span> :</b></td><td><input type="text" name="country" class="form-control" placeholder=" Enter Counter" required > </td>
+                  <td><b> Country <span class="star">*</span> :</b></td><td><input type="text" name="country" class="form-control" placeholder=" Enter Counter" required    onkeyup ="alia(this.value)"   > </td>
+                </tr>
+
+                  <tr>
+                  <td><b> alias <span class="star">*</span> :</b></td><td><input type="text" name="alias" id="aliasname" class="form-control" placeholder=" Enter Counter" required  > </td>
                 </tr>
 
            <tr>
@@ -63,6 +67,15 @@
 </section>
 <!-- /.content -->
 </div>
+<!-- ./wrapper -->
+<script type="text/javascript">
+  function alia(str) {
+         str = str.toLowerCase();
+         str=str.split(" ");
+        str =str.join("-");
+      document.getElementById("aliasname").value = str;
+  }
+</script>
 <!-- /.content-wrapper -->
 <?php $this->load->view('admin/theme/footer');?>
 <!-- Add the sidebar's background. This div must be placed

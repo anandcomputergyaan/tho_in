@@ -1,254 +1,133 @@
-.search_page_heading{
-	padding: 30px;
-	padding-left: 0;
-    padding-right: 0;
+body {
+	margin: 0;
+	font-family: 'Lato', Helvetica, sans-serif!important;
 }
-.search_page_heading h1{
-    text-align: center;
-    font-size: 32px;
-    padding: 8px;
-    padding-top: 0;
-	padding-bottom: 4px;
-    color: #1853a0;
-    line-height: 1.6;
-    box-shadow: 0px 2px 8px #888888;
-}
-.search_page_main {
-    margin-bottom: 30px;
-    display: inline-flex;
-    border: 1px solid #f1f1f1;
-    padding-left: 0px;
-    padding-right: 0px;
-    
-    box-shadow: 0px 2px 8px #888888;
-}
-.search_page_left img{
-	width: 100%;
-    height: 100%;
-	transition: transform .2s;
-}
-.search_page_left{
-	overflow: hidden;
-	padding-left: 0;
-    padding-right: 0;
-}
-.search_page_left img:hover {
-  -ms-transform: scale(1.1); /* IE 9 */
-  -webkit-transform: scale(1.1); /* Safari 3-8 */
-  transform: scale(1.1);
-  overflow: hidden;
-  cursor:pointer;
-}
-.search_page_right {
-	padding: 35px 45px;
-}
-.search_page_text {
-	line-height: 1.8;
-    letter-spacing: 1px;
-    text-align: left;
-}
-.search_page_text a{
-	padding: 6px;
-    line-height: 3;
-	letter-spacing: 0.6px;
-    padding-left: 20px;
-    font-size: 18px;
-    padding-right: 20px;
-    background-color: #1853a0;
-    color: white;
+.search_head h1{
+	text-transform: capitalize;
+    font-size: 40px;
+    letter-spacing: .2px;
+    line-height: 1.5;
     width: 100%;
+    border-bottom: 2px solid #e74e08;
+    color: #e74e08;
     text-align: center;
-	cursor: pointer;
 }
-.search_page_text a:hover{
-    transition: all .5s ease-in-out;
-    color: #fff;
-    background-color: #0c2d69;
+.search_container_left{
+	padding: 0!important;
+	float: left;
 }
-.search_page_text h4{
-	margin-bottom: 16px;
-    border-bottom: 2px dotted #1853a0;
-    width: max-content;
-    padding-bottom: 6px;
-	text-transform: uppercase;
-    max-width: 100%;
-    font-size: 22px;
-    text-shadow: -1px 1px 1px #000;
-    color: #1853a0;
+.search_container_right{
+	float: right;
 }
-.search_page_text h5{
+.search_container_img img{
+	width: 100%;
+    height: 232px;
+}
+.search_head{
+	padding: 18px 14px;
+}
+.search_container_right h4{
 	font-size: 15px;
-    text-align: left;
-    text-transform: uppercase;
 }
-.for_pagination a{
-	    border: 1px solid #1853a0!important;
-    outline: none;
-    color: #1853a0;
-    background-color: #fff;
-    position: relative;
-    display: block;
-    padding: .5rem .75rem;
-    line-height: 1.25;
-    border-bottom: 2px solid #1853a0!important;
+.tour_descript img{
+	height: 28px;
 }
-.for_pagination strong{
-    	    border: 1px solid #1853a0!important;
-    outline: none;
-    color: #fff;
-    background-color: #1853a0;
-    position: relative;
-    display: block;
-    padding: .5rem .75rem;
-    line-height: 1.25;
+.day_and_night {
+	width: 100%;
+	padding: 5px 0px;
 }
-.for_pagination a:hover{
-	    color: #ffffff;
-    background-color: #1853a0;
-    }
-.search_page_text .fa-map-marker{
-    color: #1853a0;
-    margin-right: 10px;
-	font-size: 17px;
+.search_container{
+	background-color: #eeeeee;
+	padding-left: 0px!important;
+    padding-right: 0px!important;
 }
-.search_page_text p{
-	font-size:14px;
+.search_head{
+	padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+.day_and_night img{
+	height: 24px;
+}
+.day_and_night h4{
+	margin-top: 4px;
+}
+.no_of_days {
+	float: left;
+}
+.no_of_nights {
+	float: right;
+}
+.tour_descript {
+	width: 100%;
+	padding: 5px 0px;
+}
+.search_container_text{
+	padding: 14px;
+}
+.sight_seeing , .tour_guide , .tour_meal{
+	flex: 1;
+}
+.tour_descript h4{
+	margin-top: 5px;
+}
+.tour_location img{
+	height: 20px;
+}
+.tour_location h4{
+	margin-top: 1px;
+	letter-spacing: .3px;
+    text-align: justify;
 	line-height: 1.6;
 }
-.search_page_price_wrap {
-	display:none;
-	position: absolute;
-	top: -1px;
-    right: -1px;
-    font-size: 20px;
-    overflow: hidden;
+.tour_location {
+	padding: 5px 0;
+}
+.tour_location {
+	width: 100%;
+}
+.tour_btn{
+	width: 100%;
     text-align: center;
-    line-height: 1;
-    font-weight: 500;
-    letter-spacing: .025em;
+    background-color: #1955A6;
+    padding: 6px 0px;
     text-transform: uppercase;
-    font-family: montserrat,sans-serif,Arial,sans-serif;
-    color: rgba(255,255,255,.4);
-    background: 0 0;
-    z-index: 1;
-	padding: 16px 17px 14px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 8px;
 }
-.search_page_price_wrap::before {
-	position: absolute;
-    content: '';
-    bottom: 0;
-    left: 14px;
-    width: 400%;
-    height: 100%;
-    background: #1853a0;
-    transform: skew(45deg);
-    transform-origin: 50% 100%;
-    will-change: transform;
-    pointer-events: none;
-    z-index: -1;
-}
-.search_page_price_big {
-	font-size: 20px;
-    letter-spacing: 1px;
+.tour_btn a{
+	width: 100%;
     color: #fff;
-    display: block;
+    text-decoration: none;
 }
-.for_pagination{
-	padding: 20px 0px;
+.tour_btn a:hover{
+	text-decoration:none;
+	color:#fff;
 }
-.for_pagination .page-link {
-    border: 1px solid #1853a0;
-	outline: none;
-	color:#1853a0;
-	background-color:#fff;
+.search_container{
+	box-shadow: -1px 3px 9px 0 rgba(0,0,0,.3);
+	margin-bottom: 30px;
+    margin-top: 6px;
 }
-.for_pagination .page-link.active{
-	color: #ffffff;
-    background-color: #1853a0;
-}
-a:focus {
-	outline: none!important;
-}
-*:focus {
-	outline: none!important;
-}
-a.active.focus,
-a.active:focus,
-a.focus,
-a:active.focus,
-a:active:focus,
-a:focus,
-button.active.focus,
-button.active:focus,
-button.focus,
-button:active.focus,
-button:active:focus,
-button:focus,
-.btn.active.focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn:active:focus,
-.btn:focus {
-    outline: 0!important;
-    outline-color: transparent!important;
-    outline-width: 0!important;
-    outline-style: none!important;
-	box-shadow: inset 0 0px 0 #ddd!important;
+.search_container_text h3{
+	text-transform: capitalize;
+    font-size: 24px;
 }
 
-@media only screen and (max-width:767px) {
-	.search_page_heading h1{
-		font-size: 24px;
-	}
-	.search_page_main {
-		display: block;
-	}
-	.search_page_text {
-		margin-top: 14px;
+
+
+@media (max-width:991px){
+	.search_head h1{
+		font-size: 32px;
 	}
 }
-@media (min-width:768px) and (max-width:1199px) {
-	.search_page_text h4 {
-		width: 100%;
-		margin-top: 16px;
+@media (max-width:575px){
+	.search_container{
+		padding-left: 15px!important;
+		padding-right: 15px!important;
 	}
-}
-@media (min-width:768px) and (max-width:991px) {
-	.search_page_right {
-		padding: 10px 10px 10px 20px;
-	}
-	.search_page_text h4{		
-		margin-top: 0;
-		margin-bottom: 6px;
-	}
-	.search_page_text p {
-		font-size: 13px;
-		margin-bottom: 0;
-	}
-	.search_page_text a {
-		font-size: 16px;
-	}
-	.search_page_text h5 {
-		font-size: 14px;
-	}
-}
-@media only screen and (max-width:575px) {
-	.search_page_text h4 {
-		font-size: 19px;
-	}
-	.search_page_right {
-		padding: 35px 20px;
-	}
-}
-@media only screen and (max-width:399px) {
-	.search_page_text h4 {
-		width: 100%;
-	}
-	.search_page_text p{
-		font-size: 14px;
-	}
-	.search_page_heading h1 {
-		font-size: 20px;
+	.search_head{
+		padding-left: 15px!important;
+		padding-right: 15px!important;
 	}
 }

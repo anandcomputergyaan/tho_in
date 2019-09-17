@@ -61,21 +61,14 @@ public function update_package($data,$id){
 
    }
 
-public function top_packages($ids)
-{
-    $ids = array_values($ids);
-    
-    $this->db->select('package.id,package.title,package.alias,package.map_image,package.map_alt,package.duration,package.offer,category.alias as cat_alias')
-                ->where_in('package.id',$ids)
-                ->from('package')
-                ->join('category','package.category=category.id','inner');
-    $top=$this->db->get();
-    
-    return $top->result_array();
-
-
-}
-
+  public function top_packages($ids)
+    {
+      $ids = array_values($ids);
+      $selected=$this->db->select('offer,map_image,title,alias,route,duration')
+                         ->where_in('id',$ids)
+                         ->get('package');
+      return $selected->result_array();
+    }
 
 
 
@@ -149,5 +142,32 @@ public function package_id($pack){
       return(@$row[0]);    
 
    }
+
+
+
+  public function s_category($id)
+  {
+    $rows=$this->db->select('offer,search_image,title,alias,route,duration')
+                   ->where('category',$id)
+                   ->get('package')
+                   ->result_array();
+           return $rows;
+
+  }
+
+
+    public function s_country($id)
+  {
+    $rows=$this->db->select('offer,search_image,title,alias,route,duration')
+                   ->where('country',$id)
+                   ->get('package')
+                   ->result_array();
+           return $rows;
+
+  }
+
+
+
+
 
 }

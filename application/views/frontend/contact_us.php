@@ -1,107 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Total Holiday Options</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Total Holiday Options India">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="<?php echo base_url('assets/frontend/images/THo_fevicon_icon.png');?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/frontend/css/contact_styles.css');?>">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">	
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/frontend/css/main_styles.css');?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/frontend/css/responsive_styles.css');?>">
+</head>
+<body>
 
-												<!-- header ends here-->
-
-												<!-- contact us top-1 starts here-->
-
-<section class="section_conatct1">
+												<!--contact banner starts here-->
+<section>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contact_top_part ">
-				<span>Contact Us</span>
-			</div>
-		</div>
-	</div>
-</section>												
-												
-												<!-- contact us top-1 ends here-->
-
-												<!-- contact us top-2 starts here-->
-
-<section class="section_conatct2">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contact_middle_part">
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 contact_middle_parts">
-					<!--<img src="<?php echo base_url()."/assets/"?>frontend/images/contact_us/calling.png">
-					<h4>Phone</h4>
-					<a href="callto:+91 11-25308100">+91 11-25308100</a>-->
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 contact_middle_parts">
-					<img src="<?php echo base_url()."/assets/"?>frontend/images/contact_us/emailing.png">
-					<h4>Email</h4>
-					<a href="mailto:srilanka@totalholidayoptions.lk">srilanka@totalholidayoptions.lk</a>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 contact_middle_parts">
-					<!--<img src="<?php echo base_url()."/assets/"?>frontend/images/contact_us/location.png">
-					<h4>Location</h4>
-					<h5>Total Holiday Options</h5>
-					<p>97, Ground Floor, Sai Enclave,<br>Sector 23 Dwarka,<br>New Delhi 110077, INDIA</p>-->
-				</div>
-			</div>
-		</div>
-	</div>
-</section>												
-												
-												<!-- contact us top-2 ends here-->
-
-												<!-- contact us top-3(form part) starts here-->
-
-<section class="section_conatct3">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contact_form_part">
-				<h1>Leave Us Your Info</h1>
-				<h5>We will get back to you.</h5>
-					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 contact_form_part_blank">
-
-					</div>
-					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 contact_form">
-						<form action="contact" method="post" class="needs-validation" novalidate>
-							<div class="form-group">
-							  <input type="text" class="form-control" id="f_name" placeholder="Your Full Name" name="f_name" pattern="[a-zA-Z0-9\s]+" title="Text Only" required>
-							  <div class="valid-feedback">Valid</div>
-							  <div class="invalid-feedback">Please Enter Your Full Name...</div>
-							</div>
-							<div class="form-group">
-							  <input type="email" class="form-control" id="e-mail" placeholder="Your Email" name="e_mail" required>
-							  <div class="valid-feedback">Valid</div>
-							  <div class="invalid-feedback">Please Enter Your Email Id...</div>
-							</div>
-							<div class="form-group">
-							  <input type="text" class="form-control" id="mob_no" placeholder="Your Contact Number" name="mob_no" pattern="[123456789][0-9]{9}" title="Number Only" required>
-							  <div class="valid-feedback">Valid</div>
-							  <div class="invalid-feedback">Please Enter Your Contact Number...</div>
-							</div>
-							<div class="form-group">
-							  <textarea name="comment" class="form-control" id="pwd" placeholder="Your Message" required></textarea>
-							  <div class="valid-feedback">Valid</div>
-							  <div class="invalid-feedback">Please Enter Your Message...</div>
-							</div>
-							<button type="submit" name="submit" value="submit" class="btn btn-primary">Submit Now</button>
-						 </form>
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 contact_form_part_blank">
-
-					</div>
-			</div>
-		</div>
-	</div>
-</section>												
-												
-								<!-- contact us top-3(form part) ends here-->												
-
-								<!-- contact us last part(map) starts here-->
-
-<section class="section_conatct4">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contact_map_part">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.095938380317!2d77.05175231455807!3d28.566881693801122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04bf05e7f2af%3A0x5c66ba4e6e11aacf!2sTotal+Holiday+Options+-+India!5e0!3m2!1sen!2sin!4v1554375853064!5m2!1sen!2sin" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 search_head">
+				<h1>Contact Us</h1>
 			</div>
 		</div>
 	</div>
 </section>
-								<!-- contact us last part(map) starts here-->
+												<!--contact banner ends here-->
+
+												<!--contact second part starts here-->												
+<section class="contkt_main">
+	<div class="container">
+		<div class="row">												
+			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 contakt_form">
+				<form action="#" class="needs-validation" novalidate>
+					<div class="form-group">
+					  <input type="text" class="form-control" id="f_name" placeholder="Your Full Name" name="f_name" pattern="[a-zA-Z0-9\s]+" title="Text Only" required>
+					  <div class="valid-feedback">Valid</div>
+					  <div class="invalid-feedback">Please Enter Your Full Name...</div>
+					</div>
+					<div class="form-group">
+					  <input type="email" class="form-control" id="e-mail" placeholder="Your Email" name="e-mail" required>
+					  <div class="valid-feedback">Valid</div>
+					  <div class="invalid-feedback">Please Enter Your Email Id...</div>
+					</div>
+					<div class="form-group">
+					  <input type="text" class="form-control" id="mob_no" placeholder="Your Contact Number" name="mob_no" pattern="[0-9]+" title="Number Only" required>
+					  <div class="valid-feedback">Valid</div>
+					  <div class="invalid-feedback">Please Enter Your Contact Number...</div>
+					</div>
+					<div class="form-group">
+					  <textarea name="comment" class="form-control" id="pwd" placeholder="Your Message" required></textarea>
+					  <div class="valid-feedback">Valid</div>
+					  <div class="invalid-feedback">Please Enter Your Message...</div>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit Now</button>
+				 </form>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 contakt_right">
+				<div class="contakt_right_one">
+					<img src="<?php echo base_url('assets/frontend/images/calling.png');?>">
+					<h5>Phone</h5>
+					<a href="tel:+91 11 2530 8100">+91 11 2530 8100</a>
+				</div>
+				<div class="contakt_right_two">
+					<img src="<?php echo base_url('assets/frontend/images/emailing.png');?>">
+					<h5>Email</h5>
+					<a href="mailto:india@totalholidayoptions.in" target="_blank">india@totalholidayoptions.in</a>
+				</div>
+				<div class="contakt_right_three">
+					<img src="<?php echo base_url('assets/frontend/images/location.png');?>">
+					<h5>Address</h5>
+					<p>TOTAL HOLIDAY OPTIONS PVT Ltd <br> B. No. 97, Ground Floor, Sai Enclave,<br> Behind PF Office, Sector 23 Dwarka,<br>New Delhi 110077, India</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>			
+												<!--contact second part ends here-->
+
 <!--for form validation-->
 <script>
 // Disable form submissions if there are invalid fields
@@ -117,15 +98,13 @@
           event.preventDefault();
           event.stopPropagation();
         }
-        else{
-        alert('Thank You for Contacting Us . \n'+'We will get back to you shortly ');
-    }
         form.classList.add('was-validated');
       }, false);
     });
   }, false);
 })();
-</script>												
-									 <!-- Footer 1 part starts here-->													
-<?php $this->load->view('frontend/theme/footer'); ?>
-								<!-- Footer copyright pa
+</script>				
+	
+</section>											
+
+ <?php $this->load->view('frontend/theme/footer.php');?>

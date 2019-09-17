@@ -1,0 +1,121 @@
+body {
+	margin: 0;
+	font-family: 'Lato', Helvetica, sans-serif!important;
+	height:100%!important;
+	overflow: hidden;
+	line-height: 28px;
+	background-color: #2d2d2d!important;
+}
+
+.error-404 {
+    background: #333;
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+.f_height {
+    height: 100%;
+}
+.f_width {
+    width: 100%;
+}
+.valign-wrap {
+    display: table;
+	position: absolute;
+    top: auto;
+
+}
+.h_width {
+    width: 50%;
+}
+.valign-middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+.error-404 .left-section .text-wrapper {
+    display: inline-block;
+    text-align: center;
+}
+.error-404 .left-section .text-wrapper .error-message-title {
+    color: #006cff;
+}
+.error-404 .left-section .text-wrapper .error-message-title {
+    font-size: 15vw;
+    line-height: 1;
+}
+.error-404 .left-section .text-wrapper .error-message-subtitle {
+    color: #fff;
+    font-size: 50px;
+    padding-bottom: 20px;
+    font-weight: normal;
+    line-height: 1;
+}
+.error-404 .left-section .text-wrapper .bottom-buttons {
+    margin-top: 30px;
+}
+.def-btn.btn-solid {
+    color: #fff;
+}
+.def-btn.btn-solid {
+    background:#006cff;
+    border:1px solid #2d2d2d;
+	text-decoration: none;
+	z-index: 9999999;
+    position: relative;
+}
+.def-btn {
+    display: inline-block;
+    padding: 8px 25px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+.error-404 .right-section {
+    position: relative;
+    z-index: 2;
+}
+.error-404 .right-section span.multipaded {
+    padding: 10px;
+    background: #2d2d2d;
+    font-size: 3vw;
+    color: #fff;
+    line-height: 2;
+	border-radius: 3px;
+}
+.error-404 .right-decoration {
+    width: 75%;
+    height: 180%;
+    position: absolute;
+    top: -20%;
+    right: -15%;
+    transform: rotate(20deg);
+    /* -webkit-transform: rotate(20deg); */
+    -moz-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.right-decoration .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: #272f34;
+    opacity: 0.8;
+    -webkit-opacity: 0.8;
+    -moz-opacity: 0.8;
+}
+.error-404 .right-decoration .overlay {
+    background: #006cff;
+}

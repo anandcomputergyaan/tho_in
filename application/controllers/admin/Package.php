@@ -1,35 +1,35 @@
 <?php defined('BASEPATH') OR exit('No dirrect script Accesss allowed');
 class Package extends CI_Controller{
 
-            function __construct() {
-        parent::__construct();
-             $this->load->model('Slider');
- $this->load->model('Packages');
+  function __construct()
+  {
+    parent::__construct();
+    $this->load->model('Slider');
+    $this->load->model('Packages');
+    $this->load->model('Cat');
+    $this->load->model('Special_tours');
 
-       $this->load->model('Cat');
-               $this->load->model('Special_tours');
-       
- $ses=$this->session->userdata('user_name');
-if(empty($ses)){
-        redirect(base_url('/login'));
-}
+    $ses=$this->session->userdata('user_name');
+    if(empty($ses))
+      {
+         redirect(base_url('/login'));
+      }
+  }
 
-          
-    }
-
-    
     public function index()
+      {
+
+        $parent = $this->Cat->all_categories();
+        $country_list = $this->Cat->all_country();
+        $package = $this->Special_tours->package();
+        $this->load->view('admin/package/packages',array('data' =>$parent,'pack'=>$package,'countrt_data'=>$country_list));
+      }
+
+
+
+    public function rec_save()
     {
-    
-   $parent = $this->Cat->all_categories();
-   $country_list = $this->Cat->all_country();
-
-   $package = $this->Special_tours->package();
-
-    $this->load->view('admin/package/packages',array('data' =>$parent,'pack'=>$package,'countrt_data'=>$country_list));
-    }
-
-    public function rec_save(){
+      
     $config['upload_path']          = './uploads/package';
     $config['allowed_types']        = 'gif|jpg|png';
     $this->load->library('upload',$config);
@@ -98,7 +98,7 @@ if(empty($ses)){
 print_r($data);
 exit('exit');
     if($last_id=$this->Packages->save($data)){
-/*$packid=$last_id[0]['id'];
+$packid=$last_id[0]['id'];
 
     $day=$this->input->post('day[]');
         $n=1;
@@ -110,7 +110,7 @@ exit('exit');
                                           );
                               $n++;
               $this->Slider->save($data,'itinerary');   
-           }*/
+           }
 
     redirect(base_url("admin/package/package_list"));
     }
