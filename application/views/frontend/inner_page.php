@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Total Holiday Options</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Total Holiday Options India">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="<?php echo base_url('assets/frontend/images-n/THo_fevicon_icon.png'); ?>">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/frontend/css/inner_styles.css'); ?>">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/frontend/css/responsive_styles.css'); ?>">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	<script src="<?php echo base_url('assets/frontend/js/jquery-1.11.3.min.js'); ?>" type="text/javascript"></script>
-    <script src="<?php echo base_url('assets/frontend/js/jssor.slider-27.5.0.min.js'); ?>" type="text/javascript"></script>
-	<script src="<?php echo base_url('assets/frontend/js/gijgo.min.js'); ?>" type="text/javascript"></script>
-    <link href="<?php echo base_url('assets/frontend/css/gijgo.min.css'); ?>" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/frontend/css/main_styles.css'); ?>">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/frontend/css/responsive_styles.css'); ?>">
-    
-</head>
+
 <body>											<!--Jassor Slider starts here-->
 <section class="section_one">
 	<div class="container-fluid">
@@ -134,7 +107,7 @@
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tour_info_short_right1">
 							<img src="<?php echo base_url('assets/frontend/images-n/time.png'); ?>">
-							<span>23 December - 20 June</span>
+							<span><?php echo $page_details['best_travel_time'];?></span>
 						</div>
 					</div>
 					<div class="tour_info_short tour_info_short_last">
@@ -162,8 +135,8 @@
 						<a href="#itinerary<?php echo $itinerary_details_value['day_no']; ?>" class="list-group-item list-group-item-success itenerary_tab collapsed" data-toggle="collapse" data-parent="#Itnnerary_Menu" aria-expanded="false">
 							<div class="pull-left"><h5>Day<span><?php echo $itinerary_details_value['day_no']; ?></span></h5></div>
 							<div class="t-heading">
-								<h4 class="font-lg">Kathmandu To Pokhara</h4>
-								<p>Behind sooner dining so window excuse he summer.</p>
+								<h4 class="font-lg"><?php echo $itinerary_details_value['title'];?></h4>
+								<!-- <p>Behind sooner dining so window excuse he summer.</p> -->
 							</div>
 							<i class="fa fa-angle-down"></i>
 						</a>
@@ -213,12 +186,15 @@
 					<div class="inner_page_enq_form">
 						<div class="interested_in_form">
 							<div class="container">
-								  <form role="form" name="quotes_form" id="quotes_form" action="#" method="post">
-								  	<input type="hidden" id="package_id1" name="package_id" value="Hot Air Balloon Ride">  
+								   <form action="../../Enquiry/save_enquiry" method="post" role="form" name="quotes_form" id="quotes_form">
+								  	<input type="hidden" id="package_id1" name="package_id" value="<?php echo $page_details['id'];?>">  
 									<h4>Enquire About This Trip</h4>
 									<div class="row">
 									  <div class="col-75">
-										<input type="text" id="name" name="name" placeholder="Name*" required="" autocomplete="off">
+									  	<?php
+                                          echo $this->session->flashdata("notify");
+                                         ?>
+										<input type="text" id="name" name="name" pattern="[a-zA-Z ]+" placeholder="Name*" required="" autocomplete="off">
 									  </div>
 									</div>
 									<div class="row">
@@ -228,12 +204,12 @@
 									</div>
 									<div class="row">
 									  <div class="col-75">
-										<input type="text" id="phone" name="phone" required="" placeholder="Contact Number*" autocomplete="off">
+										<input type="text" id="phone" name="phone" pattern="[123456789][0-9]{9}" maxlength="10" title=" please enter 10 digits" required="" placeholder="Contact Number*" autocomplete="off">
 									  </div>
 									</div>
 									<div class="row">
 									  <div class="col-75">
-										<input type="text" id="datepicker" name="date" required="" placeholder="Departure Date*" autocomplete="off" class="hasDatepicker">
+										<input type="text" id="datepicker" name="date" required="" placeholder="Departure Date*" autocomplete="off">
 									  </div>
 									</div>
 									<div class="row">

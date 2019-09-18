@@ -16,19 +16,18 @@ class Package extends CI_Controller{
       }
   }
 
-    public function index()
-      {
-
-        $parent = $this->Cat->all_categories();
-        $country_list = $this->Cat->all_country();
-        $package = $this->Special_tours->package();
-        $this->load->view('admin/package/packages',array('data' =>$parent,'pack'=>$package,'countrt_data'=>$country_list));
-      }
-
+  public function index()
+  {
+    $parent = $this->Cat->all_categories();
+    $country_list = $this->Cat->all_country();
+    $package = $this->Special_tours->package();
+    $this->load->view('admin/package/packages',array('data' =>$parent,'pack'=>$package,'country_data'=>$country_list));
+  }
 
 
-    public function rec_save()
-    {
+
+  public function rec_save()
+  {
       
     $config['upload_path']          = './uploads/package';
     $config['allowed_types']        = 'gif|jpg|png';
@@ -67,6 +66,7 @@ class Package extends CI_Controller{
     'category' =>$this->input->post('category'),
     'country' =>$this->input->post('country'),
     'duration' =>$this->input->post('duration'),
+    'best_travel_time'=>$this->input->post('best_travel_time'),
     'availability_from' =>$this->input->post('availability_from'),
     'availability_to' =>$this->input->post('availability_to'),
     
@@ -95,67 +95,82 @@ class Package extends CI_Controller{
     'created_on'=>$date,
     );
 
-print_r($data);
-exit('exit');
+// print_r($data);
+// exit('exit');
     if($last_id=$this->Packages->save($data)){
 $packid=$last_id[0]['id'];
 
     $day=$this->input->post('day[]');
         $n=1;
-       $day = $this->input->post('day[]');
-           foreach ($day as $val) {
-               $data = array('pack_id' =>$packid,
-                              'description'=>$val,
+    $day_title = $this->input->post('day_title[]');
+       $i=0;
+           foreach ($day as $day_val) 
+           {
+              $data = array('pack_id' =>$packid,
+                              'title'=>$day_title[$i],
+                              'description'=>$day_val,
                                'day_no' =>$n, 
                                           );
                               $n++;
-              $this->Slider->save($data,'itinerary');   
+              $this->Slider->save($data,'itinerary'); 
+ $i++;
            }
 
     redirect(base_url("admin/package/package_list"));
+   
     }
 
 
 
+  }
+
+
+
+  public function package_list()
+  {
+    $parent = $this->Cat->all_categories();
+
+    $list = array();
+    foreach ($parent as $key) 
+    {
+     $list[$key['id']]=$key['name'];
     }
 
-
-    public function package_list(){
-   $parent = $this->Cat->all_categories();
-
-$list = array();
-foreach ($parent as $key) {
-    $list[$key['id']]=$key['name'];
-}
     $table=$this->Packages->getdata();
     $this->load->view('admin/package/packages_list', array('data' => $table,'cat_name'=>$list));
     }
 
-    public function delete($id){
- 
-    if($this->Packages->delete_row($id)){
+
+  public function delete($id)
+  {
+    if($this->Packages->delete_row($id))
+    {
     redirect(base_url("admin/package/package_list"));
     }
     else{
     }
-    }
+  }
 
 
-    public function package_edit($id){
-   
+  public function package_edit($id)
+  {
    
    $relative_pack = $this->Special_tours->package();
    $parent = $this->Cat->all_categories();
    $days_details = $this->Slider->pack_id($id,'itinerary');
+   $country_list = $this->Cat->all_country();
 
-    if($data=$this->Packages->get_by_id($id)){
-    $this->load->view('admin/package/packages_edit',array('data' =>$data,'list'=>$parent,'relative'=>$relative_pack,'days'=>$days_details, ));
-    }
-    }
+    if($data=$this->Packages->get_by_id($id))
+   {
+    $this->load->view('admin/package/packages_edit',array('data' =>$data,'list'=>$parent,'relative'=>$relative_pack,'days'=>$days_details,'country_data'=>$country_list));
+   }
+
+  }
 
 
 
-    public function package_update(){
+  public function package_update()
+  {
     $id=$this->input->post('id');
     $config['upload_path']          = './uploads/package';
     $config['allowed_types']        = 'gif|jpg|png';
@@ -205,7 +220,9 @@ foreach ($parent as $key) {
      $data = array('title' =>$this->input->post('name'),
       'alias'=> $this->input->post('alias'),
     'category' =>$this->input->post('category'),
+    'country' =>$this->input->post('country'),
     'duration' =>$this->input->post('duration'),
+    'best_travel_time'=>$this->input->post('best_travel_time'),
     'availability_from' =>$this->input->post('availability_from'),
     'availability_to' =>$this->input->post('availability_to'),
     
@@ -236,64 +253,81 @@ foreach ($parent as $key) {
     );
 
 
-    if($this->Packages->update_package($data,$id)){
-          $packid=$id;
-
-   
-        $n=1;
+    if($this->Packages->update_package($data,$id))
+    {
+       $packid=$id;
+       $n=1;
        $day = $this->input->post('day[]');
-           foreach ($day as $val) {
-               $data = array('pack_id' =>$packid,
+       $day_title = $this->input->post('day_title[]');
+           $i=0;
+           foreach ($day as $val) 
+           {
+             $data = array('pack_id' =>$packid,
+                             'title'=>$day_title[$i],
                               'description'=>$val,
                                'day_no' =>$n, 
                                           );
-            $n++;
-            $this->Slider->update_itinerary($data,'itinerary');   
+              $n++;
+
+            $this->Slider->update_itinerary($data,'itinerary'); 
+              $i++;
            }
+
     redirect(base_url("admin/package/package_list"));
-    }
-    }
+  
 
-
-    public function package_view($id){
-
-   $parent = $this->Cat->all_categories();
-
-      $relative_pack = $this->Special_tours->package();
-   $days_details = $this->Slider->pack_id($id,'itinerary');
-
-    if($data=$this->Packages->get_by_id($id)){
-    $this->load->view('admin/package/packages_view',array('data' =>$data,'list'=>$parent,'relative'=>$relative_pack,'days'=>$days_details,));
-    }
     }
 
+  }
 
 
-    public function package_itinerary($id){
+  public function package_view($id)
+  {
 
+    $parent = $this->Cat->all_categories();
+    $relative_pack = $this->Special_tours->package();
+    $days_details = $this->Slider->pack_id($id,'itinerary');
+    $country_list = $this->Cat->all_country();
+
+    if($data=$this->Packages->get_by_id($id))
+    {
+
+    $this->load->view('admin/package/packages_view',array('data' =>$data,'list'=>$parent,'relative'=>$relative_pack,'days'=>$days_details,'country_data'=>$country_list));
+
+    }
+
+  }
+
+
+
+  public function package_itinerary($id)
+  {
     $this->load->view('admin/package/itinerary',array('id' =>$id,));
-    }
-    
-      public function itinerary_save(){
-    
-        $n=1;
-       $day = $this->input->post('day[]');
-       $id= $this->input->post('pack_id');
+  }
 
-           foreach ($day as $val) {
-               $data = array('pack_id' =>$id,
-                              'description'=>$val,
-                               'day_no' =>$n, 
-                                          );
-            $n++;
-            $this->Slider->save($data,'itinerary');
+    
+  public function itinerary_save()
+  {
+    
+    $n=1;
+    $day = $this->input->post('day[]');
+    $id= $this->input->post('pack_id');
+
+      foreach ($day as $val) 
+      {
+        $data = array('pack_id' =>$id,
+                      'description'=>$val,
+                      'day_no' =>$n, 
+                                    );
+           $n++;
+
+        $this->Slider->save($data,'itinerary');
              
-           }
+       }
+
     redirect(base_url("admin/package/package_list"));
 
     }
-
-
 
 
 }

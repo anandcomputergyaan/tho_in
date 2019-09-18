@@ -5,6 +5,16 @@ defined('BASEPATH') OR exit('NO direct script access allowed');
 class Frontend_model extends CI_Model{
 
 //****************************************Get Enquiry Table Data***************************************//
+  
+   public function get_enquiry_data(){
+
+    $data = $this->db->get('enquiry');
+     return $data->result_array();
+    
+   }
+
+
+
    public function get_price_request(){
 
    	$data = $this->db->get('price_request');
@@ -31,4 +41,4 @@ class Frontend_model extends CI_Model{
 
 }
 
-//****************************************Frontend Model Ends Here************************************//
+//****************************************Frontend Model Ends Here************************************//p

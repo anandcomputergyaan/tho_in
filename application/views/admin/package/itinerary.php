@@ -27,7 +27,7 @@
             <form action="../itinerary_save" method="post"  id="form_id" >              
               <table class="table responsive form-group">
 
-                <input type="hidden" name="pack_id" value="<?php echo $id;?>"   >
+                <input type="hidden" name="pack_id" value="<?php echo $id;?>">
            
         
         <tr class="social_icon_fields">

@@ -38,17 +38,17 @@
 
 
     <tr> <td><b>Country<span class="star">*</span></b></td><td> <select name="country"  class="form-control" required>
-                <option value="" > Seletct Country Name </option>
-                <?php foreach ( $countrt_data as $key ){ ?>
-                <option value="<?php echo $key['id'];?>">  <?php echo $key['country'];?>  </option>>
+                <option value="" > Select Country Name </option>
+                <?php foreach ( $country_data as $countries ){ ?>
+                <option value="<?php echo $countries['id'];?>">  <?php echo $countries['country'];?>  </option>
                 <?php  } ?>
               </select> </td>
             </tr>
 
                 <tr> <td><b>Category<span class="star">*</span></b></td><td> <select name="category"  class="form-control">
-                <option value="" required > Seletct Parent Name </option>
+                <option value="" required > Select Parent Name </option>
                 <?php foreach ( $data as $key ){ ?>
-                <option value="<?php echo $key['id'];?>">  <?php echo $key['name'];?>  </option>>
+                <option value="<?php echo $key['id'];?>">  <?php echo $key['name'];?>  </option>
                 <?php  } ?>
               </select> </td>
             </tr>
@@ -56,6 +56,9 @@
 
             <tr>
               <td><b> Duration <span class="star">*</span>: </b></td> <td> <input type="number" name="duration" placeholder="Enter Duration" class="form-control" required > </td>
+            </tr>
+            <tr>
+              <td><b>Best Time to Travel <span class="star">*</span>: </b></td> <td> <input type="text" name="best_travel_time" placeholder="Enter Best Time to Travel" class="form-control" required > </td>
             </tr>
             <tr>
               <td> <b> Availability <span class="star">*</span>:</b></td> <td><b>From</b> <input type="date" name=" availability_from" placeholder="Enter from" id="route" required > <b>To</b><input type="date" name="availability_to" placeholder="  To" id="route" required></td>
@@ -82,9 +85,11 @@
               <td><b> Itinerary<span class="star">*</span>:</b> </td> <td> <textarea type="text" name="itinerary" placeholder="Enter Itinerary " class=" form-control ckeditor" required ></textarea> </td>
             </tr>
             
-                   <tr class="social_icon_fields">
+          <tr class="social_icon_fields">
           <td><b> Day 1:</b></td>
           <td>
+            <textarea type="text" name="day_title[]" class="form-control"  placeholder="Enter Title " required ></textarea>
+            <br>
             <textarea type="text" name="day[]" class="form-control"  placeholder="Enter  details " required ></textarea>
             <br>
           </td><td class="col-md-2"><button type="button" class="btn btn-primary btn-sm" onclick="add_more();"><i class="fa fa-plus"></i></button></td>
@@ -153,7 +158,8 @@ immediately after the control sidebar -->
     var count = $(".social_icon_fields").length;
     var n = count+1;
     var html = "";
-    html += '<tr class="social_icon_fields">'+'<td><b> Day'+ n+'</b></td>'+'<td>'+'<textarea type="text"  name="day[]" id="editor2" class="form-control ckeditor" placeholder="Enter Icon" required>'
+    html += '<tr class="social_icon_fields">'+'<td><b> Day'+ n+'</b></td>'+'<td>'+'<textarea type="text"  name="day_title[]" id="editor2" class="form-control ckeditor" placeholder="Enter Title" required>'
+          +'</textarea>'+'<br>'+'<textarea type="text"  name="day[]" id="editor2" class="form-control ckeditor" placeholder="Enter details" required>'
           +'</textarea>'+'<br>'
           +'</td>'+'<td class="col-md-2">'+'<button class="btn btn-danger btn-sm" onclick="remove(this);">'+'<i class="fa fa-minus">'+'</i>'+'</button>'+'</td>'+'</tr>';
         $(".social_icon_fields:last").after(html);

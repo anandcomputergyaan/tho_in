@@ -14,17 +14,20 @@ body {
     object-fit: fill;
 }
 .search_head h1{
-	position: absolute;
+    position: absolute;
     top: 50%;
-    font-size: 58px;
+    /* font-size: 58px; */
     text-transform: uppercase;
     left: 20px;
     padding: 0px 48px;
-	text-shadow: 2px 0px 3px #000;
+    text-shadow: 2px 0px 3px #000;
     font-size: 58px;
     color: #fff;
     font-weight: 600;
     letter-spacing: .5px;
+    float: right;
+    border-bottom: none;
+    text-align:left !important;
 }
 .contkt_main{
 	padding-top: 40px;

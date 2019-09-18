@@ -32,6 +32,28 @@
                 <tr>
                   <td><b> Title :</b></td><td><input type="text" name="name" readonly class="form-control" required value="<?php echo $data['title'];?>" > </td>
                 </tr>
+
+                <tr> <td><b>Country<span class="star">*</span></b></td><td> <select name="country" readonly class="form-control" required>
+                <option value="" > Select Country Name </option>
+                <?php 
+                         $i=0;
+                    foreach ( $country_data as $key ){
+                    
+                     if($key['id']==$data['country']){
+                       $s[$i]="selected";
+                     }
+                     else{
+                      $s[$i]='';
+                     }
+
+                          ?>           
+
+                    <option value="<?php echo $key['id'];?>" <?php echo $s[$i];?> >  <?php echo $key['country'];?>  </option>>
+                
+  <?php $i++; }   ?>
+              </select> </td>
+            </tr>
+
                 <tr> <td><b>Category :</b></td><td> <select name="category" readonly class="form-control"required  >
                   <option value="" > Select Parent Name </option>
 
@@ -55,6 +77,9 @@
             </tr>
             <tr>
               <td> <b>Duration :</b></td> <td> <input type="number" name="duration" readonly required  value="<?php echo $data['duration'];?>" class="form-control"> </td>
+            </tr>
+            <tr>
+              <td><b>Best Time to Travel <span class="star">*</span>: </b></td> <td> <input type="text" name="best_travel_time" value="<?php echo $data['best_travel_time'];?>" placeholder="Enter Best Time to Travel" class="form-control" readonly required > </td>
             </tr>
             <tr>
               <td> <b> Availability:</b></td> <td><b>From</b> <input readonly type="date" name=" availability_from" placeholder="Enter from" id="route" required value="<?php echo $data['availability_from'];?>"> <b>To</b><input readonly type="date" name="availability_to" placeholder="  To" id="route" required value="<?php echo $data['availability_to'];?>"></td>              
@@ -84,7 +109,9 @@
             </tr>
             
                  <?php foreach ($days as $i_day) {?>
-                  <tr><td><b>Itinerary Day <?php echo $i_day['day_no']?></b></td> <td>
+                  <tr><td><b> Day <?php echo $i_day['day_no']?></b></td> <td>
+                  <textarea type="text" readonly name="day_title[]" class="form-control"  placeholder="Enter title" required > <?php echo $i_day['title'];?></textarea>
+                    <br>
                    <textarea type="text" readonly name="day[]" class="form-control ckeditor"  placeholder="Enter details" required > <?php echo $i_day['description'];?></textarea>
 
                    </td>

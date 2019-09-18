@@ -3,116 +3,66 @@
 class Enquiry extends CI_Controller{
 
 
-//---------------------------------------Inserting Records To Enquiry Table----------------------------//
-	public function price_request()
+	public function save_enquiry()
 	{
 
-		$this->load->model('Email_model');  
-		$date = $this->input->post('date');
-        $new_date = date("Y-m-d", strtotime($date));
-
-	    $package_name = $this->input->post('c_pack');
-                     $name= $this->input->post('c_name');
-                     $email= $this->input->post('c_email');
-                     $phone= $this->input->post('c_phone');
-                     $date= $new_date;
-                     $Category= $this->input->post('category');
-
-
-                    $subject = "Enquiry from ";
-    				$data 	= '
-    					 Name : '.$name.'
-    					 Email : '.$email.'
-    					 Tour : '. $package_name.'
-    					 Departure Date :'.$date.'
-    					 Hotel Category :'.$Category;
-
-
-		
-            $this->Email_model->send_mail('ask@indiatailormade.com','abc@totalholidayoptions.lk',$subject,$data);
+	       if($this->input->post('submit'))
+	       {
+             
+			$date = $this->input->post('date');
+	        $new_date = date("Y-m-d", strtotime($date));
 
 			$data = array(
-                     'package_name'=> $this->input->post('c_pack'),
-                     'c_name'=> $this->input->post('c_name'),
-                     'c_email'=> $this->input->post('c_email'),
-                     'c_phone'=> $this->input->post('c_phone'),
+                     'package_id'=> $this->input->post('package_id'),
+                     'name'=> $this->input->post('name'),
+                     'email'=> $this->input->post('email'),
+                     'phone'=> $this->input->post('phone'),
                      'date'=> $new_date,
-                     'Category'=> $this->input->post('category'),
+                     'Category'=> $this->input->post('Category'),
 			);
 
 
-			$insert = $this->db->insert('price_request',$data);
+			$insert = $this->db->insert('enquiry',$data);
 
 			if($insert)
 			{
-				echo "successfully Send  We Contact Us  ";
+			  $this->session->set_flashdata('notify', notify('Thank You.We will contact soon.','Success'));	
+			  redirect(base_url('Home/inner_page/'.$data['package_id']));
 			
 			}
 			else{
-				echo 'Something Wrong';
+				echo 'Something Went Wrong';
 
 
 			}
+		}
 
 		
 	}
 
-// 	public function price_request()
-// 	{
-// 		$date = $this->input->post('date');
-//         $new_date = date("Y-m-d", strtotime($date));
 
-	
-		
-// 			$data = array(
-//                      'package_name'=> $this->input->post('c_pack'),
-//                      'c_name'=> $this->input->post('c_name'),
-//                      'c_email'=> $this->input->post('c_email'),
-//                      'c_phone'=> $this->input->post('c_phone'),
-//                      'date'=> $new_date,
-//                      'Category'=> $this->input->post('category'),
-// 			);
 
-// 			$insert = $this->db->insert('price_request',$data);
-
-// 			if($insert)
-// 			{
-// 				echo "successfully Send  We Contact Us  ";
-// 			}
-// 			else{
-// echo 'Something Wrong';
-
-// 			}
-
-		
-// 	}
-
-//------------------------------------------Enquiry Table List----------------------------------------//
-	
 	public function enquiry_list()
 	{ 
-		$this->load->model('Frontend_model');
-		$data = $this->Frontend_model->get_price_request();
+		$this->load->model('frontend_model');
+		$data = $this->frontend_model->get_enquiry_data();
 
-		$this->load->view('admin/price_request_list',array('data'=> $data));
+		$this->load->view('admin/enquiry_list',array('data'=> $data));
 
 	}
 
-//-----------------------------------------Deleting Enquiry Table Data---------------------------------//
-	
+
 	public function delete($id)
 	{
-       $delete = $this->db->delete('price_request',array('id'=>$id));
+       $delete = $this->db->delete('enquiry',array('id'=>$id));
 
        if($delete)
        {
        	$this->session->set_flashdata('notify', notify('successfully Deleted','Success'));
-       	redirect(base_url('enquiry/enquiry_list'));
+       	redirect(base_url('Enquiry/enquiry_list'));
        }
 	}
 
+
 }
-
-//---------------------------------------Enquiry Controller Ends Here---------------------------------//
-
 
