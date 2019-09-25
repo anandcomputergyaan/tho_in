@@ -5,16 +5,19 @@
 					<div class="col-lg-3 col-md-12 col-xs-12 col-sm-12 footer_left_one">
 						<ul>
 							<div class="footer_head_1">Quick Links<hr></div>
-							<li><a href="#">Home</a></li>
-							<li><a href="#">About Us</a></li>
-							<li><a href="#">Booking Conditions</a></li>
+							<li><a href="<?php echo base_url('home');?>">Home</a></li>
+							<li><a href="<?php echo base_url('home/about_us');?>">About Us</a></li>
+							<li><a href="#">Contact Us</a></li>
 						</ul>
 					</div>
 					<div class="col-lg-3 col-md-12 col-xs-12 col-sm-12 footer_left_two">
 						<ul>
-							<div class="footer_head_2">Contact Us<hr></div>
-							<li>Email:<a href="mailto:india@totalholidayoptions.in">india@totalholidayoptions.in</a></li>
-							<li>Call: +91 11 25308100 </li>
+							<div class="footer_head_2">Quick Links<hr></div>
+							<!--<li>Email:<a href="mailto:india@totalholidayoptions.in">india@totalholidayoptions.in</a></li>
+							<li>Call: +91 11 25308100 </li>-->
+							<li><a href="#">Brochures</a></li>
+							<li><a href="#">Our Network</a></li>
+							<li><a href="#">Booking Conditions</a></li>
 						</ul>
 					</div>
 					<div class="col-lg-3 col-md-12 col-xs-12 col-sm-12 footer_left_three">
@@ -54,7 +57,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 copyright_main">
-					<p>© 2014-2019 Total Holiday Options. All Rights Reserved.</p>
+					<p>© 2014-2019 TOTAL HOLIDAY OPTIONS. All Rights Reserved.</p>
 				</div>
 			</div>
 		</div>

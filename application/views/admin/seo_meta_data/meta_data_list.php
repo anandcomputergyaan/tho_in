@@ -1,7 +1,23 @@
 <?php $this->load->view('admin/theme/header');?>
-<!-- Left side column. contains the logo and sidebar -->
 <?php $this->load->view('admin/theme/sidebar');?>
-<!-- Content Wrapper. Contains page content -->
+
+<script type="text/javascript">
+  function remove()
+  {
+    var x = confirm('Are you really want to delete ?');
+
+    if(x)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+
+</script>
+
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <!-- Main content -->
@@ -58,8 +74,7 @@
                 <td><a href="<?php echo base_url("admin/meta_data/update/".$row['id']);?>">
                   <button class="btn btn-success  btn-sm"><span class="fa fa-edit"></span></button></a>
                   <a href="<?php echo base_url("admin/meta_data/delete/".$row['id']); ?>">
-                    <button class="btn btn-danger  btn-sm" onclick="if(confirm('Are u sure want to delete?')) commentDelete(1);"
-><span class="fa fa-trash"></span></button></a></td>
+                    <button class="btn btn-danger  btn-sm" onclick="return remove();"><span class="fa fa-trash"></span></button></a></td>
                   </tr>
                   <?php $i++;} ?>
                 </table>
@@ -71,9 +86,7 @@
         </div>
         <!-- /.content-wrapper -->
         <?php $this->load->view('admin/theme/footer');?>
-        
-        <!-- Add the sidebar's background. This div must be placed
-        immediately after the control sidebar -->
+      
         <div class="control-sidebar-bg"></div>
       </div>
       <!-- ./wrapper --><script type="text/javascript">

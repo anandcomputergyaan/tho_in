@@ -1,6 +1,7 @@
 body {
 	margin: 0;
-	font-family: 'Lato', Helvetica, sans-serif!important;
+	/*font-family: 'Lato', Helvetica, sans-serif!important;*/
+	font-family: 'Open Sans', sans-serif!important;
 }
 .search_head h1{
 	text-transform: capitalize;

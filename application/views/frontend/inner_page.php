@@ -7,21 +7,19 @@
 			<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
 				<!-- Loading Screen -->
 				<div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
-					<img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="images-n/spin.svg" />
+					<img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="<?php echo base_url('assets/frontend/images-n/spin.svg')?>" />
 				</div>
 				<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
 					<div>
-						<img data-u="image" src="<?php echo base_url('assets/frontend/images-n/Sigiriya Rock.jpg');?>" />
+						<img data-u="image" src="<?php echo base_url('uploads/package/'.$page_details['banner_image']);?>" />
 					</div>
 					<div>
-						<img data-u="image" src="<?php echo base_url('assets/frontend/images-n/fishing.jpg');?>" />
+						<img data-u="image" src="<?php echo base_url('uploads/package/'.$page_details['banner_image_2']);?>" />
 					</div>
 					<div>
-						<img data-u="image" src="<?php echo base_url('assets/frontend/images-n/spices.jpg');?>" />
+						<img data-u="image" src="<?php echo base_url('uploads/package/'.$page_details['banner_image_3']);?>" />
 					</div>
-					<div>
-						<img data-u="image" src="<?php echo base_url('assets/frontend/images-n/surffing.jpg');?>" />
-					</div>
+
 					
 				</div>
 				<!-- Bullet Navigator -->
@@ -115,11 +113,14 @@
 							<span>Facilities</span>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 tour_info_short_right1 tour_info_short_right_last">
-							<img src="<?php echo base_url('assets/frontend/images-n/wifi-connection-signal-symbol(2).png'); ?>">
-							<img src="<?php echo base_url('assets/frontend/images-n/binoculars.png'); ?>">
-							<img src="<?php echo base_url('assets/frontend/images-n/breakfast.png'); ?>">
-							<img src="<?php echo base_url('assets/frontend/images-n/car.png'); ?>">
-							<img src="<?php echo base_url('assets/frontend/images-n/guide(2).png'); ?>">
+
+					<?php foreach ($facilities as $facilities_value): ?>
+
+				
+						<img data-u="image" src="<?php echo base_url('uploads/facility/'.$facilities_value['image_icon']);?>" />
+					
+						
+					<?php endforeach ?>
 						</div>
 					</div>
 				</div>
@@ -142,7 +143,7 @@
 						</a>
 
 						<div class="collapse collapse_redesign" id="itinerary<?php echo $itinerary_details_value['day_no']; ?>" aria-expanded="false" style="height: 0px;">
-							<p><?php echo $itinerary_details_value['description']; ?> </p>	
+							<?php echo $itinerary_details_value['description']; ?>
 
 						</div>
 <?php }?>
@@ -176,12 +177,13 @@
 								<span class="inner_page_discount_img"><img src="<?php echo base_url('assets/frontend/images-n/label1.png'); ?>"></span>
 								<span class="inner_page_discount_one">From</span>
 								<span class="inner_page_discount_two">$<?php echo $page_details['price']?></span>
-								<span class="inner_page_discount_three">$<?php echo $page_details['price']-$page_details['discounted_price']?></span><br>
+								
+								<span class="inner_page_discount_three">$<?php echo $page_details['price']-$page_details['discounted_price'];?></span><br>
 							<span class="inner_page_discount_four">Per Person on twin sharing basis</span>
 						</div>
 					</div>
 					<div class="map_main">
-						<img src="<?php echo base_url('assets/frontend/images-n/map.jpg');?>">
+						<img src="<?php echo base_url('uploads/package/'.$page_details['map_image']);?>" >
 					</div>
 					<div class="inner_page_enq_form">
 						<div class="interested_in_form">
@@ -254,16 +256,16 @@
 
 				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 related_tours_first">
 					<div class="related_tour_part">
-						<img src="<?php echo base_url('uploads/package/'.$relatives_Packs_value['map_image'])?>">
+						<img src="<?php echo base_url('uploads/package/'.$relatives_Packs_value['small_size_img'])?>">
 						<div class="tour__tag" data-tag="Private Car Tour"></div>
 						<div class="related_tour_text">
 							<h5><?php echo $relatives_Packs_value['title']; ?></h5>
 							<div class="for_star">
 								<h6><?php echo $relatives_Packs_value['duration']; ?>D/<?php echo $relatives_Packs_value['duration']-1; ?>N</h6>
-								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+							<!--	<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>-->
 							</div>
 							<div class="related_tour_text_right">
-								<a href="#">Read more</a>
+								<a href="<?php echo base_url('home/inner_page/'.$relatives_Packs_value['id']);?>">Read more</a>
 							</div>
 						</div>
 					</div>

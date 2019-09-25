@@ -2,13 +2,31 @@
 <!-- Left side column. contains the logo and sidebar -->
 <?php $this->load->view('admin/theme/sidebar');?>
 <!-- Content Wrapper. Contains page content -->
+
+<script type="text/javascript">
+  function remove()
+  {
+    var x = confirm('Are you really want to delete ?');
+
+    if(x)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+  
+</script>
+
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <!-- Main content -->
   <section class="content">
-      <?php
+    <?php
     echo $this->session->flashdata("notify");
-  ?>
+    ?>
     <section class="content-header">
       <h1>
       Category
@@ -30,10 +48,9 @@
               <tr>
                 <th>Sr.No.</th>
                 <th>Category Name</th>
-            
                 <th>Description</th>
                 <th>Image</th>
-                <th> Alt Attribut</th>
+                <th>Alt Attribut</th>
                 <th>Action</th>
               </tr>
               <?php $i=1;
@@ -41,16 +58,15 @@
               <tr>
                 <td><?php echo $i; ?></td>
                 <td><?php echo $row['name']; ?></td>
-            
                 <td><?php echo $row['description']; ?></td>
                 <td><img src="<?php echo base_url().'uploads/category/'.$row['image'] ?>" class="img-responsive img-md"></td>
                 <td><?php echo $row['alt']; ?></td>
                 <td><a href="<?php echo base_url("admin/category/category_edit/".$row['id']);?>">
                   <button class="btn btn-success  btn-sm"><span class="fa fa-edit"></span></button></a>
                   <a href="<?php echo base_url("admin/category/delete/".$row['id']); ?>">
-                    <button class="btn btn-danger  btn-sm" onclick="if(confirm('Are u sure want to delete?')) commentDelete(1);"
-><span class="fa fa-trash"></span></button></a></td>
-                  </tr>
+                    <button class="btn btn-danger  btn-sm" onclick="return remove();"
+                    ><span class="fa fa-trash"></span></button></a></td>
+                </tr>
                   <?php $i++;} ?>
                 </table>
               </div>

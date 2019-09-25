@@ -42,8 +42,8 @@ class Feedback_model extends CI_Model{
 
 	public function info()
 	{
-		$data = $this->db->get('client_feedback');
-		return $data->result_array();
+		$result = $this->db->get('client_feedback');
+		return $result->result_array();
 	}
 
 

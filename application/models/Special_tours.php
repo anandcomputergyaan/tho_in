@@ -15,8 +15,8 @@ public function save($data)
 	}
 
    public function getdata(){
-   	$table = $this->db->where_not_in('status',4)->get('tour_special');
-   	 return $table->result_array();
+   	$result = $this->db->where_not_in('status',4)->get('tour_special');
+   	 return $result->result_array();
    
    }
 

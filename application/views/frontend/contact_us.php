@@ -30,17 +30,18 @@
 
 												<!--contact second part starts here-->												
 <section class="contkt_main">
+<center><?php echo $this->session->flashdata("notify");?></center>			
 	<div class="container">
-		<div class="row">												
+		<div class="row">								
 			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 contakt_form">
-				<form action="#" class="needs-validation" novalidate>
+				<form action="../Contact/save_contact_details" method="post" class="needs-validation" novalidate>
 					<div class="form-group">
 					  <input type="text" class="form-control" id="f_name" placeholder="Your Full Name" name="f_name" pattern="[a-zA-Z0-9\s]+" title="Text Only" required>
 					  <div class="valid-feedback">Valid</div>
 					  <div class="invalid-feedback">Please Enter Your Full Name...</div>
 					</div>
 					<div class="form-group">
-					  <input type="email" class="form-control" id="e-mail" placeholder="Your Email" name="e-mail" required>
+					  <input type="email" class="form-control" id="e-mail" placeholder="Your Email" name="e_mail" required>
 					  <div class="valid-feedback">Valid</div>
 					  <div class="invalid-feedback">Please Enter Your Email Id...</div>
 					</div>
@@ -54,24 +55,24 @@
 					  <div class="valid-feedback">Valid</div>
 					  <div class="invalid-feedback">Please Enter Your Message...</div>
 					</div>
-					<button type="submit" class="btn btn-primary">Submit Now</button>
+					<button type="submit" name="submit" value="submit" class="btn btn-primary">Submit Now</button>
 				 </form>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 contakt_right">
 				<div class="contakt_right_one">
 					<img src="<?php echo base_url('assets/frontend/images/calling.png');?>">
 					<h5>Phone</h5>
-					<a href="tel:+91 11 2530 8100">+91 11 2530 8100</a>
+					<a href="tel:+<?php echo $company_details['phone'];?>"><?php echo $company_details['phone'];?></a>
 				</div>
 				<div class="contakt_right_two">
 					<img src="<?php echo base_url('assets/frontend/images/emailing.png');?>">
 					<h5>Email</h5>
-					<a href="mailto:india@totalholidayoptions.in" target="_blank">india@totalholidayoptions.in</a>
+					<a href="mailto:<?php echo $company_details['email'];?>" target="_blank"><?php echo $company_details['email'];?></a>
 				</div>
 				<div class="contakt_right_three">
 					<img src="<?php echo base_url('assets/frontend/images/location.png');?>">
 					<h5>Address</h5>
-					<p>TOTAL HOLIDAY OPTIONS PVT Ltd <br> B. No. 97, Ground Floor, Sai Enclave,<br> Behind PF Office, Sector 23 Dwarka,<br>New Delhi 110077, India</p>
+					<?php echo $company_details['address'];?>
 				</div>
 			</div>
 		</div>

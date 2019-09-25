@@ -137,7 +137,7 @@ input[type="text"]:focus{
 	border-color: none;
     box-shadow: none;
     -webkit-box-shadow: none;
-    outline: -webkit-focus-ring-color auto 5px;
+    outline: none!important;
 }
 input[type="text"]::placeholder { /* Firefox, Chrome, Opera */ 
     color:#23539d; 
@@ -310,7 +310,7 @@ input[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
 	margin-bottom: 0;
 }
 .Famous_trip_head hr{
-	width: 366px;
+	max-width: 470px;
     margin-top: 0;
     border-top: 2px solid #e74e08;
     text-align: center;
@@ -351,14 +351,14 @@ input[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
     top: -12px;
     left: 5px;
     width: 102px;
-    height: 50px;
+    height: 40px;
 }
 .for_trip_details h3{
 	position: absolute;
-    top: -2px;
-    left: 12px;
+    top: -6px;
+    left: 15px;
     color: #fff;
-    font-size: 26px;
+    font-size: 24px;
 }
 .for_trip_details span{
     font-size: 18px;
@@ -540,7 +540,7 @@ section{
 	margin-bottom: 0;
 }
 .tour_by_destination_head hr{
-	width: 460px;
+	max-width: 360px;
     margin-top: 0;
     border-top: 2px solid #e74e08;
     text-align: center;
@@ -654,7 +654,8 @@ section{
 }
 #caption {
 	text-align: center;
-	padding-top: 15px;
+	padding-top: 4px;
+    padding-bottom: 4px;
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 500;
@@ -1075,7 +1076,8 @@ section{
 }
 .top_ribon span{
     font-weight: 600;
-    letter-spacing: .2px;
+    letter-spacing: .4px;
+    font-size: 15px;
     margin-left: 4px;
 }
 .top_ribon:before {

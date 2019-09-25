@@ -57,7 +57,7 @@ body {
 .tour_short_info_main span{
 	text-transform: uppercase;
     font-weight: 700;
-    color: #868686;
+    color: #656464;
     letter-spacing: .2px;
 	font-size: 15px;
 }
@@ -159,26 +159,27 @@ a.list-group-item.list-group-item-success{
 .list-group.panel .pull-left h5{
 	float: left;
     background: #e74e08;
-    padding: 8px 16px;
+    padding: 6px 14px;
     margin-right: 16px;
     color: #fff;
     text-align: center;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 13px;
     margin-bottom: 0px;
    /* border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;*/
 	border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    letter-spacing: 0.4px;
 }
 .list-group.panel .pull-left h5 span {
-    font-size: 28px;
+    font-size: 25px;
     display: block;
 }
 .list-group.panel h4 {
     margin-bottom: 0px;
-    margin-top: 10px;
-	font-size: 18px;
+    margin-top: 20px;
+	font-size: 16px;
     font-weight: 400;
 }
 .t-heading p{
@@ -411,11 +412,11 @@ a.list-group-item.list-group-item-success i {
 	position:relative;
 }
 .btn-anchor{
-	font-size: 17px;
+	font-size: 16px;
     text-decoration: none;
     font-weight: 500;
 	color: #fff;
-    padding: 8px 20px;
+    padding: 6px 12px;
 }
 .btn-anchor:hover{
 	text-decoration:none;
@@ -647,7 +648,7 @@ a.list-group-item.list-group-item-success i {
 		font-size: 14px;
 	}
 	.list-group.panel .pull-left h5 span{
-		font-size: 22px;
+		font-size: 20px;
 	}
 	.list-group.panel h4{
 		font-size: 16px;

@@ -12,7 +12,7 @@
 	<?php $n=count($slider); for ($i=1; $i<=$n; $i++) { ?>
 
 		#carousel-example-1 .carousel-item:nth-child(<?php echo $i;?>){
-			background-image: url("<?php echo base_url('uploads/slider/main_slider/'.@$slider[$i]['slider_image']);?>");
+			background-image: url("<?php echo base_url('uploads/slider/main_slider/'.@$slider[$i-1]['slider_image']);?>");
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-position: center center;
@@ -78,10 +78,10 @@
 			</div>
 			<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 hot_deals_main">
 				
-				<div class="row">
+			
 
 
-					<?php  $j=1; $z=1; $fade='';
+					<?php  $j=0; $z=1; $fade='';
 					foreach ($hot_deatls as $hot_deatls_value)
 					{
 					if ($z==1)
@@ -99,9 +99,14 @@
 					}
 					
 					?>
+
+                      <?php if ($j%3==0) {  ?>
+                      </div>
+                      	<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 hot_deals_main">
+                   <?php }?>
 					
 					<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 hot_deals_detail_main" data-aos="<?php echo $fade;?>">
-						<img src="<?php echo base_url('uploads/package/'.@$hot_deatls_value['map_image']);?>" alt="Tour 1" class="hotdeals_image">
+						<img src="<?php echo base_url('uploads/package/'.@$hot_deatls_value['small_size_img']);?>" alt="Tour 1" class="hotdeals_image">
 						<div class="top_ribon">
 							<span><?php echo $hot_deatls_value['offer'];?></span>
 						</div>
@@ -112,12 +117,12 @@
 							<div class="overlay_text">
 								<h5><?php echo $hot_deatls_value['title'];?></h5>
 								<p><?php echo $hot_deatls_value['duration'];?> Days & <?php echo $hot_deatls_value['duration']-1;?>Night</p>
-								<h6><?php echo $hot_deatls_value['route'];?></h6>
-								<a href="#" target="_blank">Grab Now</a>
+								<h6><?php echo substr($hot_deatls_value['route'],0,30);?></h6>
+								<a href="<?php echo base_url('home/inner_page/'.$hot_deatls_value['id'])?>" target="_blank">Grab Now</a>
 							</div>
 						</div>
 					</div>
-					<?php  $z++; }?>
+					<?php $j++; $z++; }?>
 
 
 				</div>
@@ -139,7 +144,7 @@
 			<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 Most_popular_tour_main">
 
 
-				<?php   $x=1; $m_fade='';
+				<?php  $m=0; $x=1; $m_fade='';
 				foreach ($most_populer as $most_populer_value) {
 					if ($x==1)
 				{
@@ -152,23 +157,27 @@
 				} 
 
 				?>
-
+				
+                 <?php if($m%2==0){ ?>
+                             </div>
+                 			<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 Most_popular_tour_main">
+                 <?php }?>
 
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 popular_tour_details_main" data-aos="<?php echo $m_fade?>">
 					<div class="popular_tour_details">
 						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 popular_tour_img">
-							<img src="<?php echo base_url('uploads/package/'.@$most_populer_value['map_image']);?>">
+							<img src="<?php echo base_url('uploads/package/'.@$most_populer_value['small_size_img']);?>">
 						</div>
 						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 popular_tour_text">
-							<h5><?php echo$most_populer_value['title']; ?></h5>
-							<span>Rs 5000</span>
-							<p><?php echo$most_populer_value['title']; ?></p>
+							<h5><?php echo $most_populer_value['title']; ?></h5>
+							<span>Rs <?php echo $most_populer_value['price']?></span>
+							<p><?php echo substr($most_populer_value['details'],0,100); ?>...</p>
 							<h6><?php echo $most_populer_value['duration']; ?> Days & <?php echo $most_populer_value['duration']-1; ?> Nights</h6>
-							<a href="#" class="explore_tour">Discover</a>
+							<a href="<?php echo base_url('home/inner_page/'.$most_populer_value['id'])?>" class="explore_tour">Discover</a>
 						</div>
 					</div>
 				</div>
-				<?php  $x++; } ?>
+				<?php  $x++; $m++; } ?>
 
 
 			</div>
@@ -182,7 +191,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 Famous_trip_head">
-				<h2>Tour By Destination</h2><hr>
+				<h2>Popular Tour Categories</h2><hr>
 			</div>
 			<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 Famous_trip_main">
 				
@@ -190,10 +199,10 @@
 				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 for_trip_details_main" data-aos="fade-up">
 					<div class="for_trip_details">
 						<h3><?php echo $tour_destination_value['tour_count'];?><span>Tours</span></h3>
-						<img src="<?php echo base_url('assets/frontend/images/14-800x800.jpg');?>">
+						<img src="<?php echo base_url('uploads/tour_destination/'.$tour_destination_value['image']);?>">
 						<h5><?php echo $tour_destination_value['country'];?></h5>
-						<p><?php echo $tour_destination_value['description'];?>...</p>
-						<a href="#" class="go_to_tour">Read More</a><br><br>
+						<p><?php echo substr($tour_destination_value['description'],0,125);?>...</p>
+						<a href="<?php echo base_url('home/search_by_country/'.$tour_destination_value['alias']);?>" class="go_to_tour">Read More</a><br><br>
 					</div>
 				</div>
 				<?php } ?>
@@ -210,12 +219,11 @@
 <section class="section_5">
 	<div class="container">
 		<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 tour_by_destination_head">
-			<h2>Popular Tour Categories</h2>
+			<h2>Tour By Destination</h2>
 			<hr>
 		</div>
+		
 		<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 tour_by_destination_main">
-
-
 			<?php $p1=1; $s_cont=count($Popular_tour_categories);  foreach ($Popular_tour_categories as  $Popular_tour_categories_value) {?>
 			<div class="mySlides">
 				<div class="numbertext"><?php echo $p1." "."/ ".$s_cont ?></div>
@@ -257,7 +265,7 @@
 			<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 special_offer_main">
 				<div class="col-lg-4 col-md-12 col-sm-12 special_offer_single" data-aos="fade-up" onclick="window.open('https://indiatailormade.com/get-quote/','mywindow');">
 					<div class="special_offer_single_part">
-						<img src="<?php echo base_url('assets/frontend/images/20170823_095523-960x1149.jpg');?>">
+						<img src="<?php echo base_url('assets/frontend/images/dis_two.jpg');?>" alt="" title="India">
 						<div class="offer_content_left">
 							<div class="offer_content_inner_two">
 								<div></div>
@@ -269,7 +277,7 @@
 				</div>
 				<div class="col-lg-4 col-md-12 col-sm-12 special_offer_single" data-aos="fade-up" onclick="window.open('https://indiatailormade.com/','mywindow');">
 					<div class="special_offer_single_part">
-						<img src="<?php echo base_url('assets/frontend/images/20170823_095523-960x1149.jpg');?>">
+						<img src="<?php echo base_url('assets/frontend/images/dis_one.jpg');?>" alt="" title="India">
 						<div class="offer_content_middle">
 							<div class="offer_content_inner_one">
 								<div></div>
@@ -281,7 +289,7 @@
 				</div>
 				<div class="col-lg-4 col-md-12 col-sm-12 special_offer_single" data-aos="fade-up" onclick="window.open('https://indiatailormade.com/get-quote/','mywindow');">
 					<div class="special_offer_single_part">
-						<img src="<?php echo base_url('assets/frontend/images/20170823_095523-960x1149.jpg');?>">
+						<img src="<?php echo base_url('assets/frontend/images/dis_three.jpg');?>" alt="" title="India">
 						<div class="offer_content">
 							<div class="offer_content_inner">
 								<div></div>

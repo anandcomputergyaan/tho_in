@@ -2,6 +2,11 @@
 defined('BASEPATH') OR exit('NO direct script access allowed');
 class Slider extends CI_Model{
 
+/* this model use for */
+
+
+
+
 	public function save($data,$table){
 	 
 		 if($this->db->insert($table,$data))
@@ -13,30 +18,29 @@ class Slider extends CI_Model{
 		 }
 	}
 
-   public function getdata($table){
-   	$table = $this->db->get($table);
-   	 return $table->result_array();
-    
+   public function getdata($table)
+   {
+   	$result=$this->db->get($table);
+   	return $result->result_array(); 
    }
 
 
-      public function getdata_by_id($table,$id){
-    $table = $this->db->where('tour_id',$id)->get($table);
-     return $table->result_array();
-    
+    public function getdata_by_id($table,$id)
+    {
+     $result = $this->db->where('tour_id',$id)->get($table);
+     return $result->result_array();
    }
 
 
-   public function delete_row($id,$table){
-   	if($this->db->delete($table, array('id' => $id,))){
-   		return true;
+   public function delete_row($id,$table)
+   {
+     	if($this->db->delete($table, array('id' => $id,))){
+     		return true;
 
-   	}
-   	else{
-   		return false;
-   	}
-
-
+     	}
+     	else{
+     		return false;
+     	}
    }
 
    public function get_by_id($id,$table){
@@ -63,8 +67,8 @@ public function update_slider($data,$id,$table){
 
    public function slider_data($table){
 
-      $table = $this->db->get($table);
-       return $table->result_array();
+      $result = $this->db->get($table);
+       return $result->result_array();
    }
 
    public function user_login($data,$date,$table){
@@ -96,6 +100,25 @@ public function update_slider($data,$id,$table){
          else{
             return false;
              }
+      }
+      
+            public function facility()
+      {
+
+          $list=$this->db->select('id,name')
+                   ->get('facilities')
+                   ->result_array();
+         return $list;
+      }
+
+      public function selected_facility($ids){
+               $ids = array_values($ids);
+      $selected=$this->db->select('name,image_icon')
+                         ->where_in('id',$ids)
+                         ->get('facilities')
+                         ->result_array();
+      return $selected;
+
       }
 
 

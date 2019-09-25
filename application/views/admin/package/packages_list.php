@@ -1,11 +1,30 @@
 <?php $this->load->view('admin/theme/header');?>
-<!-- Left side column. contains the logo and sidebar -->
 <?php $this->load->view('admin/theme/sidebar');?>
-<!-- Content Wrapper. Contains page content -->
+
+<script type="text/javascript">
+  function remove()
+  {
+    var x = confirm('Are you really want to delete ?');
+
+    if(x)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+
+</script>
+
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <!-- Main content -->
   <section class="content">
+    <?php
+    echo $this->session->flashdata("notify");
+    ?>
     <section class="content-header">
       <h1>
       Package
@@ -24,7 +43,7 @@
         
         <div  class="row" >
           <div class="col-md-12">
-     
+            
             <table class="table table-hover table-bordered">
               <tr>
                 <th>Sr.No.</th>
@@ -40,43 +59,32 @@
                 <td><?php echo $row['title']; ?></td>
                 <td><?php echo @$cat_name[$row['category']]; ?></td>
                 <td><?php echo $row['duration']; ?></td>
-
                 <td><?php echo $row['price']; ?></td>
                 <td><?php echo $row['tour_route_from'] ." to".$row['tour_route_to']; ?></td>
-            
+                
                 
                 <td><a href="<?php echo base_url("admin/package/package_edit/".$row['id']);?>">
                   <button title="Edit" class="btn btn-success  btn-sm"><span class="fa fa-edit"></span></button></a>
                   <a href="<?php echo base_url("admin/package/delete/".$row['id']); ?>">
-                    <button title="delete" class="btn btn-danger  btn-sm" onclick="if(confirm('Are u sure want to delete?')) commentDelete(1);"
-><span class="fa fa-trash"></span></button></a>
-                   
-                   <a href="<?php echo base_url("admin/package/package_view/".$row['id']); ?>">
-                    <button title="View" class="btn btn-info  btn-sm"><span class="fa fa-eye"></span></button></a>
-
-                    <a href="<?php echo base_url("admin/Tour_offers/offers_list/".$row['id']); ?>">
-                    <button title="Offers" class="btn btn-warning  btn-sm"><span class="fa fa-tags"></span></button></a>
+                    <button title="delete" class="btn btn-danger  btn-sm" onclick="return remove();"
+                    ><span class="fa fa-trash"></span></button></a>
                     
-
-   <!-- <a href="<?php echo base_url("admin/package//package_itinerary/".$row['id']); ?>">
-                    <button title="View" class="btn btn-primary  btn-sm">I</button></a>
-    -->                    
-                  </td>
-                    
-                  </tr>
-                  <?php $i++;} ?>
-                </table>
-              </div>
-              
-            </div></div>
-          </section>
-          <!-- /.content -->
+                    <a href="<?php echo base_url("admin/package/package_view/".$row['id']); ?>">
+                      <button title="View" class="btn btn-info  btn-sm"><span class="fa fa-eye"></span></button></a>
+                      <a href="<?php echo base_url("admin/Tour_offers/offers_list/".$row['id']); ?>">
+                        <button title="Offers" class="btn btn-warning  btn-sm"><span class="fa fa-tags"></span></button></a>
+                      </td>
+                      
+                    </tr>
+                    <?php $i++;} ?>
+                  </table>
+                </div>
+                
+              </div></div>
+            </section>
+            <!-- /.content -->
+          </div>
+          <!-- /.content-wrapper -->
+          <?php $this->load->view('admin/theme/footer');?>
+          <div class="control-sidebar-bg"></div>
         </div>
-        <!-- /.content-wrapper -->
-        <?php $this->load->view('admin/theme/footer');?>
-        
-        <!-- Add the sidebar's background. This div must be placed
-        immediately after the control sidebar -->
-        <div class="control-sidebar-bg"></div>
-      </div>
-      <!-- ./wrapper -->

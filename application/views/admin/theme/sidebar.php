@@ -84,6 +84,38 @@
                 
                 </li>
 
+        <li class=" treeview">
+          <a href="">
+            <i class="fa fa-circle"></i> <span>Frontend Data</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="<?php echo base_url("/Enquiry/enquiry_list")?>"><i class="fa fa-circle-o"></i>Enquiry List </a></li>
+            <li><a href="<?php echo base_url("Contact/contact_list")?>"><i class="fa fa-circle-o"></i>Contact List</a></li>
+          </ul>
+        </li>
+
+        <li class=" treeview">
+          <a href="">
+            <i class="fa fa-circle"></i> <span>Company Details</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="<?php echo base_url("/admin/CompanyDetails")?>"><i class="fa fa-circle-o"></i>Add Details</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="<?php echo base_url("/admin/Facilities/facility_list")?>" >
+            <i class="fa fa-circle"></i> <span>Facilities</span>
+          </a>
+      
+        </li>
+
 
  <!-- <li class=" treeview">
           <a href="">

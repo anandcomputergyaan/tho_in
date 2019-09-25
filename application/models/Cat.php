@@ -16,11 +16,10 @@ class Cat extends CI_Model{
 		 }
 	}
 
-   public function getdata(){
-
-   	$table = $this->db->get('category');
-   	 return $table->result_array();
-    
+   public function getdata()
+   {
+   	$data = $this->db->get('category');
+   	 return $data->result_array();    
    }
 
 
@@ -59,8 +58,8 @@ class Cat extends CI_Model{
    {   
 
       $this->db->select('id,name,alias')->where('parent',"");
-      $info =$this->db->get('category');
-      return $info->result_array();
+      $result =$this->db->get('category');
+      return $result->result_array();
 
    }
    
@@ -76,8 +75,8 @@ class Cat extends CI_Model{
    public function all_categories()
    {   
       $this->db->select('id,name,alias')->where_not_in('parent',"");
-      $all_c =$this->db->get('category');
-      return $all_c->result_array();
+      $result =$this->db->get('category');
+      return $result->result_array();
    }
 
 

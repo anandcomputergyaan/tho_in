@@ -1,11 +1,32 @@
 <?php $this->load->view('admin/theme/header');?>
 <!-- Left side column. contains the logo and sidebar -->
 <?php $this->load->view('admin/theme/sidebar');?>
+
+<script type="text/javascript">
+  function remove()
+  {
+    var x = confirm('Are you really want to delete ?');
+
+    if(x)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+
+</script>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <!-- Main content -->
   <section class="content">
+    <?php
+    echo $this->session->flashdata("notify");
+    ?>
     <section class="content-header">
       <h1>
        Tour By Destination 
@@ -56,7 +77,7 @@
                 <td><a href="<?php echo base_url("admin/tour_by_destinations/tour_destination_edit/".$row['id']);?>">
                   <button title="Edit" class="btn btn-success  btn-sm"><span class="fa fa-edit"></span></button></a>
                   <a href="<?php echo base_url("admin/tour_by_destinations/delete/".$row['id']); ?>">
-                    <button title="delete" class="btn btn-danger  btn-sm" onclick="if(confirm('Are u sure want to delete?')) commentDelete(1);"><span class="fa fa-trash"></span></button></a>
+                    <button title="delete" class="btn btn-danger  btn-sm" onclick="return remove();"><span class="fa fa-trash"></span></button></a>
                    </td>
                     
                   </tr>

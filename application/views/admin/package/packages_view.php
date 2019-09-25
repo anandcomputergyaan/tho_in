@@ -1,8 +1,5 @@
 <?php $this->load->view('admin/theme/header');?>
-<!-- Left side column. contains the logo and sidebar -->
 <?php $this->load->view('admin/theme/sidebar');?>
-
-<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <!-- Main content -->
@@ -27,133 +24,140 @@
           <div class="col-md-2"> </div>
           <div class="col-md-8">
             <br>
-           
-              <table class="table responsive form-group">
-                <tr>
-                  <td><b> Title :</b></td><td><input type="text" name="name" readonly class="form-control" required value="<?php echo $data['title'];?>" > </td>
-                </tr>
-
-                <tr> <td><b>Country<span class="star">*</span></b></td><td> <select name="country" readonly class="form-control" required>
-                <option value="" > Select Country Name </option>
-                <?php 
-                         $i=0;
-                    foreach ( $country_data as $key ){
-                    
-                     if($key['id']==$data['country']){
-                       $s[$i]="selected";
-                     }
-                     else{
-                      $s[$i]='';
-                     }
-
-                          ?>           
-
-                    <option value="<?php echo $key['id'];?>" <?php echo $s[$i];?> >  <?php echo $key['country'];?>  </option>>
-                
-  <?php $i++; }   ?>
-              </select> </td>
-            </tr>
-
-                <tr> <td><b>Category :</b></td><td> <select name="category" readonly class="form-control"required  >
-                  <option value="" > Select Parent Name </option>
-
-                     <?php 
-                         $i=0;
-                    foreach ( $list as $key ){
-                    
-                     if($key['id']==$data['category']){
-                       $s[$i]="selected";
-                     }
-                     else{
-                      $s[$i]='';
-                     }
-
-                          ?>           
-
-                    <option value="<?php echo $key['id'];?>" <?php echo $s[$i];?> >  <?php echo $key['name'];?>  </option>>
-                
-  <?php $i++; }   ?>
-              </select> </td>
-            </tr>
-            <tr>
-              <td> <b>Duration :</b></td> <td> <input type="number" name="duration" readonly required  value="<?php echo $data['duration'];?>" class="form-control"> </td>
-            </tr>
-            <tr>
-              <td><b>Best Time to Travel <span class="star">*</span>: </b></td> <td> <input type="text" name="best_travel_time" value="<?php echo $data['best_travel_time'];?>" placeholder="Enter Best Time to Travel" class="form-control" readonly required > </td>
-            </tr>
-            <tr>
-              <td> <b> Availability:</b></td> <td><b>From</b> <input readonly type="date" name=" availability_from" placeholder="Enter from" id="route" required value="<?php echo $data['availability_from'];?>"> <b>To</b><input readonly type="date" name="availability_to" placeholder="  To" id="route" required value="<?php echo $data['availability_to'];?>"></td>              
-            </tr>
-            <tr>
-              <td><b> Marquee :</b> </td> <td> <input readonly type="text" name="marquee" required  value="<?php echo $data['marquee'];?>" class="form-control" > </td>
-            </tr>
-
-            <tr>
-              <td><b> Discounted Offer:</b> </td> <td> <input readonly type="text" name="offer" required  value="<?php echo $data['offer'];?>" class="form-control" > </td>
-            </tr>
-
-            <tr>
-              <td><b> Discounted Price:</b> </td> <td> <input readonly type="number" required  name="discounted_price" value="<?php echo $data['discounted_price'];?>"  class="form-control"> </td>
-            </tr>
-            <tr>
-              <td><b> Price :</b> </td> <td> <input readonly type="number" name="price" required  value="<?php echo $data['price'];?>" class="form-control"> </td>
-            </tr>
-             <tr>
-              <td> <b>Tour Route :</b></td> <td><b>From</b> <input readonly type="text" name="tour_route_from" placeholder="Enter from" id="route" required value="<?php echo $data['tour_route_from'];?>"> <b>To</b><input readonly type="text" name="tour_route_to" placeholder="And To" id="route" required value="<?php echo $data['tour_route_to'];?>"></td>              
-            </tr>
-            <tr>
-              <td> <b> Route :</b></td> <td><input readonly type="text" name="route" placeholder="Enter from" class="form-control" required value="<?php echo $data['route'];?>" > </td>              
-            </tr>
-             <tr>
-              <td><b> Itinerary :</b> </td> <td> <textarea readonly type="text" name="itinerary" placeholder="Enter Itinerary" class="form-control ckeditor" required><?php echo $data['itinerary'];?></textarea> </td>
-            </tr>
             
-                 <?php foreach ($days as $i_day) {?>
-                  <tr><td><b> Day <?php echo $i_day['day_no']?></b></td> <td>
-                  <textarea type="text" readonly name="day_title[]" class="form-control"  placeholder="Enter title" required > <?php echo $i_day['title'];?></textarea>
-                    <br>
-                   <textarea type="text" readonly name="day[]" class="form-control ckeditor"  placeholder="Enter details" required > <?php echo $i_day['description'];?></textarea>
+            <table class="table responsive form-group">
+              <tr>
+                <td><b> Title :</b></td><td><input type="text" name="name" readonly class="form-control" required value="<?php echo $data['title'];?>" > </td>
+              </tr>
+              <tr> <td><b>Country<span class="star">*</span></b></td><td> <select name="country" readonly class="form-control" required>
+              <option value="" > Select Country Name </option>
+              <?php
+              $i=0;
+              foreach ( $country_data as $key ){
+              
+              if($key['id']==$data['country']){
+              $s[$i]="selected";
+              }
+              else{
+              $s[$i]='';
+              }
+              ?>
+              <option value="<?php echo $key['id'];?>" <?php echo $s[$i];?> >  <?php echo $key['country'];?>  </option>>
+              
+              <?php $i++; }   ?>
+            </select> </td>
+          </tr>
+          <tr> <td><b>Category :</b></td><td> <select name="category" readonly class="form-control"required  >
+          <option value="" > Select Parent Name </option>
+          <?php
+          $i=0;
+          foreach ( $list as $key ){
+          
+          if($key['id']==$data['category']){
+          $s[$i]="selected";
+          }
+          else{
+          $s[$i]='';
+          }
+          ?>
+          <option value="<?php echo $key['id'];?>" <?php echo $s[$i];?> >  <?php echo $key['name'];?>  </option>>
+          
+          <?php $i++; }   ?>
+        </select> </td>
+      </tr>
+      <tr>
+        <td> <b>Duration :</b></td> <td> <input type="number" name="duration" readonly required  value="<?php echo $data['duration'];?>" class="form-control"> </td>
+      </tr>
+      <tr>
+        <td><b>Best Time to Travel <span class="star">*</span>: </b></td> <td> <input type="text" name="best_travel_time" value="<?php echo $data['best_travel_time'];?>" placeholder="Enter Best Time to Travel" class="form-control" readonly required > </td>
+      </tr>
+      <tr>
+        <td> <b> Availability:</b></td> <td><b>From</b> <input readonly type="date" name=" availability_from" placeholder="Enter from" id="route" required value="<?php echo $data['availability_from'];?>"> <b>To</b><input readonly type="date" name="availability_to" placeholder="  To" id="route" required value="<?php echo $data['availability_to'];?>"></td>
+      </tr>
+      <tr>
+        <td><b> Marquee :</b> </td> <td> <input readonly type="text" name="marquee" required  value="<?php echo $data['marquee'];?>" class="form-control" > </td>
+      </tr>
+      <tr>
+        <td><b> Discounted Offer:</b> </td> <td> <input readonly type="text" name="offer" required  value="<?php echo $data['offer'];?>" class="form-control" > </td>
+      </tr>
+      <tr>
+        <td><b> Discounted Price:</b> </td> <td> <input readonly type="number" required  name="discounted_price" value="<?php echo $data['discounted_price'];?>"  class="form-control"> </td>
+      </tr>
+      <tr>
+        <td><b> Price :</b> </td> <td> <input readonly type="number" name="price" required  value="<?php echo $data['price'];?>" class="form-control"> </td>
+      </tr>
+      <tr>
+        <td> <b>Tour Route :</b></td> <td><b>From</b> <input readonly type="text" name="tour_route_from" placeholder="Enter from" id="route" required value="<?php echo $data['tour_route_from'];?>"> <b>To</b><input readonly type="text" name="tour_route_to" placeholder="And To" id="route" required value="<?php echo $data['tour_route_to'];?>"></td>
+      </tr>
+      <tr>
+        <td> <b> Route :</b></td> <td><input readonly type="text" name="route" placeholder="Enter from" class="form-control" required value="<?php echo $data['route'];?>" > </td>
+      </tr>
+      <tr>
+        <td><b> Itinerary :</b> </td> <td> <textarea readonly type="text" name="itinerary" placeholder="Enter Itinerary" class="form-control ckeditor" required><?php echo $data['itinerary'];?></textarea> </td>
+      </tr>
+      
+      <?php foreach ($days as $i_day) {?>
+      <tr><td><b> Day <?php echo $i_day['day_no']?></b></td> <td>
+      <textarea type="text" readonly name="day_title[]" class="form-control"  placeholder="Enter title" required > <?php echo $i_day['title'];?></textarea>
+      <br>
+      <textarea type="text" readonly name="day[]" class="form-control ckeditor"  placeholder="Enter details" required > <?php echo $i_day['description'];?></textarea>
+    </td>
+  </tr>
+  <?php   } ?>
+  <tr><td>
+  </tr>
+  <tr>
+    <td><b>Details :</b></td><td>  <textarea readonly name="details" class="form-control ckeditor"  placeholder="Enter details " required  ><?php echo $data['details'];?></textarea>  </td>
+  </tr>
+  <tr>
+    <td><b>Exclusion :</b></td><td>  <textarea readonly name=" exclusion" class="form-control ckeditor"  placeholder="Enter exclusion  " required  ><?php echo $data['exclusion'];?></textarea> </td>
+  </tr>
+  <tr>
+    <td><b>Inclusions:</b></td><td>  <textarea readonly name="inclusions" class="form-control ckeditor"  placeholder=" inclusions Hear" required ><?php echo $data['inclusions'];?></textarea>  </td>
+  </tr>
+  <tr>
+    <td><b>Essential Information:</b></td><td>  <textarea readonly name="essential_information" class="form-control ckeditor"  placeholder=" Essential Information" required  ><?php echo $data['essential_information'];?></textarea>  </td>
+  </tr>
+  <tr> <td><b>Banner Image : </b></td><td><img src="<?php echo base_url().'uploads/package/'.$data['banner_image'] ?>" class="img-responsive img-md">
+  
+</tr>
+<tr> <td><b> Banner Alt:</b></td><td>
 
-                   </td>
-             </tr>
-               <?php   } ?>
-               <tr><td>
-
+<input type="text" readonly name="banner_alt" class="form-control" value="<?php echo $data['banner_alt'];?>" > </td>
+</tr>
+<tr> <td><b>Banner Image 2: </b></td><td><img src="<?php echo base_url().'uploads/package/'.$data['banner_image_2'] ?>" class="img-responsive img-md">
 
 </tr>
-           <tr>
-              <td><b>Details :</b></td><td>  <textarea readonly name="details" class="form-control ckeditor"  placeholder="Enter details " required  ><?php echo $data['details'];?></textarea>  </td>
-            </tr>
-            <tr>
-              <td><b>Exclusion :</b></td><td>  <textarea readonly name=" exclusion" class="form-control ckeditor"  placeholder="Enter exclusion  " required  ><?php echo $data['exclusion'];?></textarea> </td>
-            </tr>
-            <tr>
-              <td><b>Inclusions:</b></td><td>  <textarea readonly name="inclusions" class="form-control ckeditor"  placeholder=" inclusions Hear" required ><?php echo $data['inclusions'];?></textarea>  </td>
-            </tr>
-           <tr>
-              <td><b>Essential Information:</b></td><td>  <textarea readonly name="essential_information" class="form-control ckeditor"  placeholder=" Essential Information" required  ><?php echo $data['essential_information'];?></textarea>  </td>
-            </tr>
-            <tr> <td><b>Banner Image : </b></td><td><img src="<?php echo base_url().'uploads/package/'.$data['banner_image'] ?>" class="img-responsive img-md">
-      
-        </tr>
-        <tr> <td><b> Banner Alt:</b></td><td>
-        
-      <input type="text" readonly name="banner_alt" class="form-control" value="<?php echo $data['banner_alt'];?>" > </td>
-    </tr>
-    <tr> <td><b>  Map Image : </b></td><td>
-    <img src="<?php echo base_url().'uploads/package/'.$data['map_image'] ?>"  class="img-responsive img-md">
- </td>
+<tr> <td><b> Banner Alt 2:</b></td><td>
+
+<input type="text" readonly name="banner_alt_2" class="form-control" value="<?php echo $data['banner_alt_2'];?>" > </td>
+</tr>
+<tr> <td><b>Banner Image 3: </b></td><td><img src="<?php echo base_url().'uploads/package/'.$data['banner_image_3'] ?>" class="img-responsive img-md">
+
+</tr>
+<tr> <td><b> Banner Alt 3:</b></td><td>
+
+<input type="text" readonly name="banner_alt_3" class="form-control" value="<?php echo $data['banner_alt'];?>" > </td>
+</tr>
+<tr> <td><b>  Map Image : </b></td><td>
+<img src="<?php echo base_url().'uploads/package/'.$data['map_image'] ?>"  class="img-responsive img-md">
+</td>
 </tr>
 <tr> <td><b>Map Alt :</b></td><td> <input type="text" readonly name="map_alt"required class="form-control" value="<?php echo $data['map_alt'];?>"> </td>
 </tr>
-<tr>  <td> <b>  Search Image<span class="star">*</span>: </b></td>
-  <td>  <img src="<?php echo base_url().'uploads/package/'.$data['search_image'] ?>"  class="img-responsive img-md"></td>
-      
+<tr> <td><b>Small size Image : </b></td><td>
+<img src="<?php echo base_url().'uploads/package/'.$data['small_size_img'] ?>"  class="img-responsive img-md">
+</td>
 </tr>
-      
-      <tr> <td><b>Search Alt<span class="star">*</span> : </b></td><td> <input type="text" name="search_alt" class="form-control" placeholder=" Enter Search Alt Attribute" value="<?php echo $data['search_alt'];?>" readonly > </td>
-    </tr>
+<tr> <td><b>Small Image Alt :</b></td><td> <input type="text" readonly name="small_img_alt"required class="form-control" value="<?php echo $data['small_img_alt'];?>"> </td>
+</tr>
+<tr>  <td> <b>  Search Image<span class="star">*</span>: </b></td>
+<td>  <img src="<?php echo base_url().'uploads/package/'.$data['search_image'] ?>"  class="img-responsive img-md"></td>
 
+</tr>
+
+<tr> <td><b>Search Alt<span class="star">*</span> : </b></td><td> <input type="text" name="search_alt" class="form-control" placeholder=" Enter Search Alt Attribute" value="<?php echo $data['search_alt'];?>" readonly > </td>
+</tr>
 <?php
 $info = array();
 $info = explode("-",$data['price_include']);
@@ -188,37 +192,24 @@ break;
 <input type="checkbox" name="price_include[]"  disabled value="Sightseeing" <?php echo $sightseeing ;?> >Sightseeing
 </td>
 </tr>
-
 <tr> <td><b> Relative Packages </b></td>
 <td>
-  <?php $pr=explode(',', $data['relative']); foreach ($relative as $r_pack) { 
-
-
-
+<?php $pr=explode(',', $data['relative']); foreach ($relative as $r_pack) {
 if (in_array($r_pack['id'],$pr))
-  {
-    $chec="checked";
-  }
+{
+$chec="checked";
+}
 else
-  {
-  $chec="";
-  }
-
-    ?>
-
+{
+$chec="";
+}
+?>
 <input type="checkbox" name="day[]"  disabled value="<?php echo $r_pack['id']; ?>" <?php echo $chec;?> ><?php echo $r_pack['title']; ?>
 
-  
-  <?php }  ?>
+<?php }  ?>
 </td>
 </tr>
-
-
-
-
-
 </table>
-
 </div>
 </div>
 </div></div>

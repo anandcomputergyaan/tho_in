@@ -28,26 +28,24 @@
           <div class="col-md-8">
             <form action="../update_data/<?php echo $data['id'];?>" method="post"  id="form_id" enctype="multipart/form-data">
               <table class="table responsive form-group">
-            <tr> <td><b> Client Name <span style="color: red;">*</span> : </b></td><td> <input type="text" name="client_name" value="<?php echo $data['client_name'];?>" class="form-control" required placeholder="Enter Client Name"  > </td>
+                <tr> <td><b> Client Name <span style="color: red;">*</span> : </b></td><td> <input type="text" name="client_name" value="<?php echo $data['client_name'];?>" class="form-control" required placeholder="Enter Client Name"  > </td>
+              </tr>
+              <tr> <td><b> Country <span style="color: red;">*</span> :</b></td><td><input type="text" name="country" value="<?php echo $data['country'];?>" class="form-control" required placeholder="Enter Country">
+            </tr>
+            <tr>
+              <td><b> Comments <span style="color: red;">*</span> :</b></td>
+              <td>
+                <textarea rows="4" cols="4" name="comments" class="form-control" required placeholder="Enter Comments"><?php echo $data['comments'];?></textarea>
+              </td>
+            </tr>
+            <tr> <td><b> Youtube video link <span style="color: red;">*</span> : </b></td><td> <input type="url" name="video_link" value="<?php echo $data['video_link'];?>" class="form-control" required placeholder="Enter video link here"  > </td>
           </tr>
-          <tr> <td><b> Country <span style="color: red;">*</span> :</b></td><td><input type="text" name="country" value="<?php echo $data['country'];?>" class="form-control" required placeholder="Enter Country">
-        </tr>
-        <tr>
-          <td><b> Comments <span style="color: red;">*</span> :</b></td>
-          <td>
-            <textarea rows="4" cols="4" name="comments" class="form-control" required placeholder="Enter Comments"><?php echo $data['comments'];?></textarea>
-          </td>
-        </tr>
-        <tr> <td><b> Youtube video link <span style="color: red;">*</span> : </b></td><td> <input type="url" name="video_link" value="<?php echo $data['video_link'];?>" class="form-control" required placeholder="Enter video link here"  > </td>
-          </tr>
-
-        <input type="hidden" name="id" value="<?php echo $data['id'];?>" >
-
-        <tr><td colspan="2"> <input type="submit" name="submit" class="pull-right  btn btn-success"></td></tr>
-      </table>
-</form>
-</div>
-</div>
+          <input type="hidden" name="id" value="<?php echo $data['id'];?>" >
+          <tr><td colspan="2"> <input type="submit" name="submit" class="pull-right  btn btn-success"></td></tr>
+        </table>
+      </form>
+    </div>
+  </div>
 </div></div>
 </section>
 <!-- /.content -->

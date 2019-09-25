@@ -51,9 +51,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'Home'; //Home
 
-/*
+
 $route['admin/category'] = 'admin/category';
 $route['admin/(:any)'] = 'admin/$1';
+/*
 $route['translate_uri_dashes'] = FALSE;
 
 $route['about-us'] = 'Home/about_us';
@@ -76,7 +77,7 @@ $route['enquiry/(:any)']='enquiry/(:any)';
 
 $route['search'] = 'Home/search_page';
 $route['(:any)/(:any)'] = 'Home/page/$1/$2';
-
+*/
 
 $route['admin/(:any)/(:any)'] = 'admin/$1/$2';
-$route['admin/(:any)/(:any)/(:any)'] = 'admin/$1/$2/$3';*/
+$route['admin/(:any)/(:any)/(:any)'] = 'admin/$1/$2/$3';

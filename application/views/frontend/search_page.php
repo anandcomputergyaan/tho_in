@@ -8,7 +8,7 @@
 			</div>
 
 
-			<?php foreach ($search_data as $search_data_value) { ?>
+			<?php $i=0; foreach ($search_data as $search_data_value) { ?>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 search_container">
 				<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 search_container_left">
 					<div class="search_container_img">
@@ -33,30 +33,20 @@
 							<h4 class="ml-2"><?php echo $search_data_value['route']?></h4>
 						</div>
 						<div class="tour_descript d-inline-flex">
-							<div class="sight_seeing d-flex">
-								<img src="<?php echo base_url('assets/frontend/images/binoculars.png') ?>">
-								<h4 class="ml-2 mr-2">Sight Seeing</h4>
-							</div>
-							<div class="tour_guide d-flex">
-								<img src="<?php echo base_url('assets/frontend/images/guide(2).png') ?>">
-								<h4 class="ml-2 mr-2">Tour Guide</h4>
-							</div>
-							<div class="tour_meal d-flex">
-								<img src="<?php echo base_url('assets/frontend/images/breakfast.png') ?>">
-								<h4 class="ml-2 mr-2">Meal</h4>
-							</div>
-							<div class="tour_car d-flex">
-								<img src="<?php echo base_url('assets/frontend/images/sedan-car-front1.png') ?>">
-								<h4 class="ml-2 mr-2">Car</h4>
-							</div>
+						    
+						<?php  foreach ($facilities[$i] as $facilities_value) { ?>
+							<img src="<?php echo base_url('uploads/facility/'.$facilities_value['image_icon']); ?>">
+							<h4 class="ml-2 mr-2"><?php echo $facilities_value['name']; ?></h4>
+							<?php }?>
+							
 						</div>
 						<div class="tour_btn">
-							<a href="#">Explore Now</a>
+							<a href="<?php echo base_url('home/inner_page/'.$search_data_value['id']);?>">Explore Now</a>
 						</div>
 					</div>
 				</div>
 			</div>
-			<?php } ?>
+			<?php $i++; } ?>
 
 
 		</div>

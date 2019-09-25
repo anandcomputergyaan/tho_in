@@ -17,8 +17,8 @@ class Frontend_model extends CI_Model{
 
    public function get_price_request(){
 
-   	$data = $this->db->get('price_request');
-   	 return $data->result_array();
+   	$result = $this->db->get('price_request');
+   	 return $result->result_array();
     
    }
 
