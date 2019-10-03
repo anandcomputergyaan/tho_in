@@ -137,8 +137,7 @@
 <td>
 <?php
 foreach ($pack as $value) { ?>
-<input type="checkbox" name="relative[]" value="<?php echo $value['id'];?>" >
-<?php echo $value['title']; } ?>
+<input type="checkbox" name="relative[]" value="<?php echo $value['id'];?>"><?php echo $value['title']; } ?>
 </td>
 </tr>
 <tr><td colspan="2"> <input type="submit" name="submit" class="pull-right  btn btn-success"></td></tr>

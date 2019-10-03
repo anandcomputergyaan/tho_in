@@ -62,11 +62,11 @@
                 <td><?php echo $row['tour_title']; ?></td>
  
 
-                <td><img src="<?php echo base_url('uploads/slider/Popular_tour_categories/'.$row['slider_image']);?>" class="img img-lg"></td>
+                <td> <a href="<?php echo base_url('admin/slider/Popular_tour_categories/image_cropper/'.$row['id']);?>"><img src="<?php echo base_url('uploads/slider/Popular_tour_categories/'.$row['slider_image']);?>" class="img img-lg"></a> 
+                </td>
+                
                 <td> <?php echo $row['slider_alt']; ?> </td>
                 <td> <?php echo $row['image_title']; ?> </td>
-     
-                
                 <td><a href="<?php echo base_url("admin/slider/Popular_tour_categories/slider_edit/".$row['id']);?>">
                   <button title="Edit" class="btn btn-success  btn-sm"><span class="fa fa-edit"></span></button></a>
                   <a href="<?php echo base_url("admin/slider/Popular_tour_categories/delete/".$row['id']); ?>">

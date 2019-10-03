@@ -3,6 +3,21 @@ defined('BASEPATH') OR exit('NO direct script access allowed');
 
 class Packages extends CI_Model{
 
+public function search_pack($str)
+{
+       $rows=$this->db->select('offer,search_image,title,alias,route,duration,id,price_include')
+                   ->like('title',$str)
+                   ->get('package')
+                   ->result_array();
+           return $rows;
+}
+
+
+
+
+
+
+
   public function save($data){
 	 
 		 if($this->db->insert('package',$data))
@@ -80,33 +95,6 @@ class Packages extends CI_Model{
 }
 
 
-
-  public function search_pack($str){
-
-   
-     $top =   $this->db->select('package.id,package.title,package.search_image,package.map_alt,package.duration,package.offer,package.details,package.route,category.alias as cat_alias')
-                       ->like('package.route', $str)
-                       ->join('category','package.category=category.id','inner')
-                       ->get('package');
-     return count($top->result_array());
-
-
-}
-
-  public function limit_row($limit,$start,$str){
-    
-          $d=$this->db->select('package.id,package.alias,package.title,package.search_image,package.map_alt,package.duration,package.offer,package.details,package.route,category.alias as cat_alias')
-                     ->like('package.route', $str)
-                     ->join('category','package.category=category.id','inner')
-                      ->limit($limit,$start)
-                     ->get('package');
-            $d=$d->result_array();
-         
-            return($d);
-
-}
-
-
   public function all_pack($str=false){
    
    $top =  $this->db->select('package.id,package.alias,package.title,package.search_image,package.map_alt,package.duration,package.offer,package.details,package.route,category.alias as cat_alias')
@@ -167,6 +155,28 @@ class Packages extends CI_Model{
            return $rows;
 
   }
+
+
+
+  public function images($id)
+  {
+      $data=$this->db->select('id,banner_image,banner_alt,banner_image_2,banner_alt_2,banner_image_3,banner_alt_3,map_image,map_alt,small_size_img,small_img_alt,search_image,search_alt')
+      ->where('id',$id)
+      ->get('package')
+      ->result_array();
+      return $data[0];
+
+  }
+
+          public function image_update($image,$id,$col_name){
+        $this->db->set("$col_name",$image)
+                 ->where('id',$id)
+                 ->update('package');
+              return true;   
+      }
+
+
+
 
 
 

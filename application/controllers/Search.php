@@ -5,15 +5,29 @@ class Search extends CI_Controller
    public function page()
    {
       $this->load->model('Packages');
-      $str = $this->input->post('search_bar');
-      $result=$this->Packages->search_pack($str);
-
       $this->load->model('Cat');
-      $category = $this->Cat->all_parent();
-      $this->load->model('Packages');
-      $pack = $this->Packages->package_list();
-      $this->load->view('frontend/theme/header', array('row' => $category, 'list'=>$pack,'str'=>$str,));
-      $this->load->view('frontend/search_result', array('result' => $result,));
+      $this->load->model('Slider');
+
+     $str = $this->input->post('search_bar');
+     $result=$this->Packages->search_pack($str);
+
+       $parent = $this->Cat->all_categories();
+      $country_list = $this->Cat->all_country();
+      $this->load->view('frontend/theme/header', array('country' => $country_list, 'category'=>$parent));
+
+   $i=0;
+        $facilities= array();
+
+           foreach ($result as $search_data_by_category_value)
+             {
+               $facility_ids=explode("-",$search_data_by_category_value['price_include']);
+               $facilities[$i]=$this->Slider->selected_facility($facility_ids);
+               $i++;
+             }
+
+$this->load->view('frontend/search_page', array('search_data' => $result,'facilities'=>$facilities));
+
+
    }
    
 }

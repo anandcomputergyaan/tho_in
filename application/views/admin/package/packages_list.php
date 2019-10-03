@@ -71,8 +71,13 @@
                     
                     <a href="<?php echo base_url("admin/package/package_view/".$row['id']); ?>">
                       <button title="View" class="btn btn-info  btn-sm"><span class="fa fa-eye"></span></button></a>
+
                       <a href="<?php echo base_url("admin/Tour_offers/offers_list/".$row['id']); ?>">
                         <button title="Offers" class="btn btn-warning  btn-sm"><span class="fa fa-tags"></span></button></a>
+
+                         <a href="<?php echo base_url("admin/package/packages_images/".$row['id']); ?>">
+                        <button title="Images" class="btn btn-secondary  btn-sm"><span class="fa fa-image"></span></button></a>
+
                       </td>
                       
                     </tr>

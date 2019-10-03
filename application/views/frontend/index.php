@@ -158,7 +158,7 @@
 
 				?>
 				
-                 <?php if($m%2==0){ ?>
+                 <?php if($m%2==0  and $m!=0){ ?>
                              </div>
                  			<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 Most_popular_tour_main">
                  <?php }?>

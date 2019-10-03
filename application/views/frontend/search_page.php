@@ -1,56 +1,67 @@
 
-<body>												<!--search div starts here-->
-<section>
-	<div class="container" style=" margin-top: 70px;">
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 search_head">
-				<h1>Search Result For :<span> Golden triangle Tours</span></h1>
-			</div>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/frontend/css/new_search_styles.css')?>">
 
-
-			<?php $i=0; foreach ($search_data as $search_data_value) { ?>
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 search_container">
-				<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 search_container_left">
-					<div class="search_container_img">
-						<img src="<?php echo base_url('uploads/package/'.$search_data_value['search_image']);?>">
-					</div>
-				</div>
-				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 search_container_right">
-					<div class="search_container_text">
-						<h3><?php echo $search_data_value['title'];?></h3>
-						<div class="day_and_night">
-							<div class="no_of_days d-flex">
-								<img src="<?php echo base_url('assets/frontend/images/sun.png') ?> ">
-								<h4 class="ml-2"><?php echo $search_data_value['duration'];?>Days</h4>
-							</div>
-							<div class="no_of_nights d-flex">
-								<img src="<?php echo base_url('assets/frontend/images/moon1.png') ?>">
-								<h4 class="ml-2"><?php echo $search_data_value['duration']-1;?>nights</h4>
-							</div>
-						</div>
-						<div class="tour_location d-flex">
-							<img src="<?php echo base_url('assets/frontend/images/world.png') ?>">
-							<h4 class="ml-2"><?php echo $search_data_value['route']?></h4>
-						</div>
-						<div class="tour_descript d-inline-flex">
-						    
-						<?php  foreach ($facilities[$i] as $facilities_value) { ?>
-							<img src="<?php echo base_url('uploads/facility/'.$facilities_value['image_icon']); ?>">
-							<h4 class="ml-2 mr-2"><?php echo $facilities_value['name']; ?></h4>
-							<?php }?>
+<body>
+<section id="content">
+            <div class="container">
+                <div id="main">
+                    <div class="row add-clearfix image-box style1 tour-locations">
+                        
+                     <?php $i=0; foreach ($search_data as $search_data_value) { ?>
+                        <div class="col-sm-6 col-md-6 col-lg-4">
+                            <article class="box">
+                                <figure>
+                                    <a href="<?php echo base_url('home/inner_page/'.$search_data_value['id']);?>" class="hover-effect">
+                                        <img src="<?php echo base_url('uploads/package/'.$search_data_value['search_image']);?>" alt="">
+                                    </a>
+                                </figure>
+                                <div class="details">
+                                    <h4 class="box-title"><?php echo $search_data_value['title'];?></h4>
+                                    <hr>
+                                    <ul class="features check">
+										<!--<li><img src="images/sun1.png" class="mr-2">10 Days <span><img src="images/moon.png" class="mr-2">09 Nights</span></li>-->
+                                        <li>	<?php  foreach ($facilities[$i] as $facilities_value) { ?>
 							
-						</div>
-						<div class="tour_btn">
-							<a href="<?php echo base_url('home/inner_page/'.$search_data_value['id']);?>">Explore Now</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<?php $i++; } ?>
+								
+										<img src="<?php echo base_url('uploads/facility/'.$facilities_value['image_icon']);?>" title="" >
+								
+	                            
+							
+							         	<?php }?>
 
 
-		</div>
-	</div>
-</section>
-	
+
+                                        	<!-- <img src="images/sight-see1.png" class="mr-4" title="Sight Seeing"><img src="images/bell-covering-hot-dish.png" class="mr-4" title="Meal"><img src="images/car-front1.png" class="mr-4" title="Car"><img src="images/guides.png" class="mr-4" title="Tour Guide"><img src="images/wifi.png" class="mr-4" title="Wifi"> -->
+                                        </li>
+                                         <hr>                                       
+                                        <li style=" font-size: 15px;color: #111;"><img src="<?php echo base_url('assets/frontend/images/locate2.png') ?>" title="Tour Route" class="mr-2"><?php echo substr($search_data_value['route'],0,35)?><a tabindex="0" class="btn to_modify_design btn-sm" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="" data-content="<?php echo substr($search_data_value['route'],40,100)?>">+ more</a></li>
+                                    </ul>
+                                    <hr>
+                                    <div class="text-center">
+                                        <div class="time">
+                                            <img src="<?php echo base_url('assets/frontend/images/clock-circular-outlines.png') ?>" class="mr-1">
+                                            <span><?php echo $search_data_value['duration'];?> Days / <?php echo $search_data_value['duration']-1;?> Nights</span>
+                                        </div>
+                                    </div>
+                                    <a href="<?php echo base_url('home/inner_page/'.$search_data_value['id']);?>" class="button btn-small full-width">BOOK NOW</a>
+                                </div>
+                            </article>
+                        </div>
+                      <?php $i++; } ?>
+                       
+                    </div>
+                </div>
+            </div>
+        </section>
+<script>
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+$('.popover-dismiss').popover({
+  trigger: 'focus'
+})
+</script>
+</body>
+</html>
+
  <?php $this->load->view('frontend/theme/footer.php');?>	

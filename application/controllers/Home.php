@@ -11,7 +11,6 @@ class Home extends CI_Controller
       $this->load->model('packages');
       $this->load->model('Feedback_model');
       $this->load->model('CompanyDetailsModel');
-
       $parent = $this->Cat->all_categories();
       $country_list = $this->Cat->all_country();
       $this->load->view('frontend/theme/header', array('country' => $country_list, 'category'=>$parent));
@@ -32,7 +31,16 @@ class Home extends CI_Controller
     $satisfied_customer = $this->Feedback_model->get_data();
 
     $this->load->view('frontend/index', array('slider' =>$main_slider,'hot_deatls'=>$hot_deatls,'most_populer'=>$most_populer,'tour_destination'=>$tour_destination,'Popular_tour_categories'=>$Popular_tour_categories,'satisfied_customer'=>$satisfied_customer));
+
   }
+
+
+
+public function search()
+    {
+      echo $this->input->post('search');
+    }
+
 
 
   public function contact_us()

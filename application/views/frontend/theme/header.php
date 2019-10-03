@@ -87,11 +87,11 @@
       </ul>
       <!-- Links -->
 
-<!--      <form class="form-inline">
+<form action="<?php echo base_url('search/page');  ?>" method="post"  class="form-inline">
         <div class="md-form my-0">
-          <input class="form-control mr-sm-2 to_search" type="text" placeholder="Search" aria-label="Search">
+          <input class="form-control mr-sm-2 to_search" name="search_bar"  type="text" placeholder="Search" aria-label="Search">
         </div>
-      </form>-->
+      </form>
     </div>
     <!-- Collapsible content -->
 

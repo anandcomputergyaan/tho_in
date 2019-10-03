@@ -407,4 +407,128 @@ class Package extends CI_Controller
   }
 
 
+    public function packages_images($id)
+    {
+      $data=$this->Packages->images($id);   
+      $this->load->view('admin/package_img/image_list', array('data'=>$data));
+    }
+
+    public function cropper_image($which_image,$id)
+    {  
+      
+      switch($which_image){
+        case 'first_banner':
+              $images="banner_image";         
+           break;
+        case 'secound_banner':
+              $images="banner_image_2";  
+           break;
+        case 'third_banner':
+              $images="banner_image_3";  
+           break;
+        case 'map_image':
+              $images="map_image";  
+           break;
+        case 'small_image':
+              $images="small_size_img";  
+           break;
+        case 'search_image':
+              $images="search_image";  
+           break;
+
+        default:  
+
+      }
+
+       $data=$this->Packages->images($id); 
+       $this->load->view('admin/package_img/cropper/cropper', array('current_facility'=>$data,'image_name'=>$images));                           
+    }
+
+
+    public function cropper_store($id){
+        $image = $this->generateImage( $this->input->post("facility_image_data"));
+        $column_name=$this->input->post('col_name');
+
+        // scale image size start 
+        
+        list($txt, $ext) = explode(".", $image);
+        $filePath = "uploads/package/".$image;
+        $max_width = 1200;
+        $width = $this->getWidth($filePath);
+        $height = $this->getHeight($filePath);
+
+        if ($width > $max_width)
+        {
+            $scale = $max_width/$width;
+            $uploaded = $this->resizeImage($filePath,$width,$height,$scale, $ext);
+        }
+         else {
+                $scale = 1;
+                $uploaded = $this->resizeImage($filePath,$width,$height,$scale, $ext);
+               } 
+          
+          $this->Packages->image_update($image,$id,$column_name);
+          print_r($image);    
+    }
+
+    public function generateImage($img)
+    {
+
+        $folderPath = "uploads/package/";
+        $image_parts = explode(";base64,", $img);
+        $image_type_aux = explode("image/", $image_parts[0]);
+        $image_type = $image_type_aux[1];
+        $image_base64 = base64_decode($image_parts[1]);
+        $file_name = 'package_img_'.time() . '.jpg';
+        $file =$folderPath.$file_name;
+        file_put_contents($file, $image_base64);
+        return $file_name;
+
+    }
+
+
+    public function resizeImage($image,$width,$height,$scale, $ext) {
+        $newImageWidth = ceil($width * $scale);
+        $newImageHeight = ceil($height * $scale);
+        $newImage = imagecreatetruecolor($newImageWidth,$newImageHeight);
+        switch ($ext) {
+            case 'jpg':
+            case 'jpeg':
+                $source = imagecreatefromjpeg($image);
+                break;
+            case 'gif':
+                $source = imagecreatefromgif($image);
+                break;
+            case 'png':
+                $source = imagecreatefrompng($image);
+                break;
+            default:
+                $source = false;
+                break;
+        }   
+        imagecopyresampled($newImage,$source,0,0,0,0,$newImageWidth,$newImageHeight,$width,$height);
+        imagejpeg($newImage,$image,90);
+        chmod($image, 0777);
+        return $image;
+    }
+
+    /*  Function to get image height. */
+    public function getHeight($image) {
+        $sizes = getimagesize($image);
+        $height = $sizes[1];
+        return $height;
+    }
+
+    /* Function to get image width */
+    public function getWidth($image) {
+        $sizes = getimagesize($image);
+        $width = $sizes[0];
+        return $width;
+    }
+
+
+
+
+
+
 }

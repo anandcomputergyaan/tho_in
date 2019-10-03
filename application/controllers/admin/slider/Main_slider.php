@@ -81,6 +81,7 @@ class main_slider extends CI_Controller
     }
 
 
+
     public function slider_update()
     {
         $id=$this->input->post('id');
@@ -119,5 +120,102 @@ class main_slider extends CI_Controller
            redirect(base_url("admin/slider/main_slider/slider_list"));
         }
     }
+
+
+ public function main_slider_image($id){
+
+   if($data=$this->slider->get_by_id($id,"main_slider"))
+     {
+       $this->load->view('admin/sliders/main_slider/cropper/cropper',array('data' =>$data,));
+     }
+
+ }
+
+ public function cropper_store($id){
+     $image = $this->generateImage( $this->input->post("facility_image_data"));
+
+     // scale image size start 
+     
+     list($txt, $ext) = explode(".", $image);
+     $filePath = "uploads/slider/main_slider/".$image;
+     $max_width = 1200;
+     $width = $this->getWidth($filePath);
+     $height = $this->getHeight($filePath);
+
+     if ($width > $max_width)
+     {
+         $scale = $max_width/$width;
+         $uploaded = $this->resizeImage($filePath,$width,$height,$scale, $ext);
+     }
+      else {
+             $scale = 1;
+             $uploaded = $this->resizeImage($filePath,$width,$height,$scale, $ext);
+            } 
+       
+       $this->Slider->image_update($image,'slider_image',$id,'main_slider');
+       print_r($image);    
+ }
+
+
+ public function generateImage($img)
+ {
+
+     $folderPath = "uploads/slider/main_slider/";
+     $image_parts = explode(";base64,", $img);
+     $image_type_aux = explode("image/", $image_parts[0]);
+     $image_type = $image_type_aux[1];
+     $image_base64 = base64_decode($image_parts[1]);
+     $file_name = 'main_slider_img_'.time() . '.jpg';
+     $file =$folderPath.$file_name;
+     file_put_contents($file, $image_base64);
+     return $file_name;
+
+ }
+
+
+ public function resizeImage($image,$width,$height,$scale, $ext) {
+     $newImageWidth = ceil($width * $scale);
+     $newImageHeight = ceil($height * $scale);
+     $newImage = imagecreatetruecolor($newImageWidth,$newImageHeight);
+     switch ($ext) {
+         case 'jpg':
+         case 'jpeg':
+             $source = imagecreatefromjpeg($image);
+             break;
+         case 'gif':
+             $source = imagecreatefromgif($image);
+             break;
+         case 'png':
+             $source = imagecreatefrompng($image);
+             break;
+         default:
+             $source = false;
+             break;
+     }   
+     imagecopyresampled($newImage,$source,0,0,0,0,$newImageWidth,$newImageHeight,$width,$height);
+     imagejpeg($newImage,$image,90);
+     chmod($image, 0777);
+     return $image;
+ }
+
+ /*  Function to get image height. */
+ public function getHeight($image) {
+     $sizes = getimagesize($image);
+     $height = $sizes[1];
+     return $height;
+ }
+
+ /* Function to get image width */
+ public function getWidth($image) {
+     $sizes = getimagesize($image);
+     $width = $sizes[0];
+     return $width;
+}
+
+
+
+
+
+
   
 }

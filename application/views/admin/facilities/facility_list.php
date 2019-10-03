@@ -50,7 +50,7 @@
                 <td><?php echo $i; ?></td>
                 <td><?php echo $row['name']; ?></td>            
                 <td><?php echo $row['description']; ?></td>
-                <td><img src="<?php echo base_url().'uploads/facility/'.$row['image_icon'] ?>" class="img-responsive img-md"></td>
+                <td> <a href="<?php echo base_url("admin/Facilities/facility_cropper/".$row['id']);?>"><img src="<?php echo base_url().'uploads/facility/'.$row['image_icon'] ?>" class="img-responsive img-md"> </a>  </td>
                 <td><?php echo $row['alt']; ?></td>
                 <td><a href="<?php echo base_url("admin/Facilities/facility_edit/".$row['id']);?>">
                   <button class="btn btn-success  btn-sm"><span class="fa fa-edit"></span></button></a>

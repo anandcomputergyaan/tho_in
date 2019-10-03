@@ -65,8 +65,8 @@
             <tr>
               <td><b> Status <span class="star">*</span>  : </b></td> <td> <select name="status" required class="form-control" value="<?php echo $data['status'];?>">status
                                                        <option value=""  >Select status</option> 
-                                                       <option value="1" <?php echo $active; ?> >Active</option> 
-                                                       <option value="0" <?php echo @$inactive; ?> >Inactive</option> 
+                                                       <option value="1" <?php echo @$active;?>> Active </option> 
+                                                       <option value="0" <?php echo @$inactive;?> >Inactive</option> 
                                              </select>
                </td>
             </tr>

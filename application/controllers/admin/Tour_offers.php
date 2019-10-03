@@ -89,7 +89,7 @@ class Tour_offers extends CI_Controller
 		$config['allowed_types']  = 'gif|jpg|png|jpeg';
 		$this->load->library('upload',$config);
 			
-		if(empty($_FILES['offer_image']['name'])
+		if(empty($_FILES['offer_image']['name']))
 		{
 			$data['data']['file_name']=$this->input->post('off_image');
 		}

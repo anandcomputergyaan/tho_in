@@ -67,14 +67,12 @@
                 <td><?php echo $row['country']; ?></td>
                 <td><?php echo $row['alias']; ?></td>
  
-<td><?php echo $row['description']; ?></td>
-<td><?php echo $row['tour_count']; ?></td>
-                <td><img src="<?php echo base_url('uploads/tour_destination/'.$row['image']);?>" class="img img-lg"></td>
+                        
+                <td><a href="<?php echo base_url('admin/Tour_by_destinations/image_cropper/'.$row['id']);?>"><img src="<?php echo base_url('uploads/tour_destination/'.$row['image']);?>" class="img img-lg"> </a> </td>
                 <td> <?php echo $row['alt']; ?> </td>
                 <td> <?php echo $row['image_title']; ?> </td>
      
-                
-                <td><a href="<?php echo base_url("admin/tour_by_destinations/tour_destination_edit/".$row['id']);?>">
+           <td><a href="<?php echo base_url("admin/tour_by_destinations/tour_destination_edit/".$row['id']);?>">
                   <button title="Edit" class="btn btn-success  btn-sm"><span class="fa fa-edit"></span></button></a>
                   <a href="<?php echo base_url("admin/tour_by_destinations/delete/".$row['id']); ?>">
                     <button title="delete" class="btn btn-danger  btn-sm" onclick="return remove();"><span class="fa fa-trash"></span></button></a>

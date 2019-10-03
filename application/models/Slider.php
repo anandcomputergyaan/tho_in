@@ -4,9 +4,6 @@ class Slider extends CI_Model{
 
 /* this model use for */
 
-
-
-
 	public function save($data,$table){
 	 
 		 if($this->db->insert($table,$data))
@@ -112,13 +109,21 @@ public function update_slider($data,$id,$table){
       }
 
       public function selected_facility($ids){
+
                $ids = array_values($ids);
       $selected=$this->db->select('name,image_icon')
                          ->where_in('id',$ids)
                          ->get('facilities')
                          ->result_array();
       return $selected;
+      }
 
+      public function image_update($image,$col_name,$id,$table){
+        $this->db->set($col_name,$image)
+                 ->where('id',$id)
+                 ->update($table);
+
+              return true;   
       }
 
 

@@ -62,7 +62,7 @@
                 <td><?php echo $row['tour_title']; ?></td>
  
 
-                <td><img src="<?php echo base_url('uploads/slider/main_slider/'.$row['slider_image']);?>" class="img img-lg"></td>
+                <td> <a href="<?php echo base_url('admin/slider/main_slider/main_slider_image/'.$row['id']);?>"><img src="<?php echo base_url('uploads/slider/main_slider/'.$row['slider_image']);?>" class="img img-lg"></a> </td>
                 <td> <?php echo $row['slider_alt']; ?> </td>
                 <td> <?php echo $row['image_title']; ?> </td>
      
